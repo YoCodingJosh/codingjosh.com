@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import type {Options as DocsOptions} from '@docusaurus/plugin-content-docs';
 
 const config: Config = {
   title: 'CodingJosh',
@@ -29,15 +30,31 @@ const config: Config = {
       'classic',
       {
         docs: {
+          path: 'docs',
+          routeBasePath: 'docs',
           sidebarPath: './sidebars.ts',
         },
-        blog: {
-          showReadingTime: true,
-        },
+        blog: false,
+        // blog: {
+        //   showReadingTime: true,
+        // },
         theme: {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
+    ],
+  ],
+
+  plugins: [
+    [
+      'content-docs',
+      {
+        id: 'about',
+        path: 'about',
+        routeBasePath: 'about',
+        breadcrumbs: false,
+        // sidebarPath: './sidebars.ts',
+      } satisfies DocsOptions,
     ],
   ],
 
@@ -47,13 +64,21 @@ const config: Config = {
       disableSwitch: false,
       respectPrefersColorScheme: true,
     },
+    announcementBar: {
+      id: 'supportus',
+      content:
+        '🚧👷‍♂️ This site is still under construction! 🏗️🚧',
+      backgroundColor: '#fafbfc',
+      textColor: '#091E42',
+      isCloseable: false,
+    },
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
       title: 'CodingJosh',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'Cool Yunocchi',
+        src: 'img/hidamari_sketch_yuno_by_graphicsmith_d4bxvho-pre-resized.png',
       },
       items: [
         {
@@ -67,7 +92,7 @@ const config: Config = {
           position: 'left',
           label: 'Tutorial',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        // {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/YoCodingJosh',
           label: 'GitHub',
