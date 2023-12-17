@@ -82,8 +82,13 @@ const config: Config = {
       },
       items: [
         {
+          to: '/projects',
+          label: 'Projects',
+          position: 'left',
+        },
+        {
           to: '/about',
-          label: 'About Me',
+          label: 'About',
           position: 'left',
         },
         {
@@ -148,6 +153,19 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+      additionalLanguages: [
+        'bash',
+        'c',
+        'cmake',
+        'csharp',
+        'elixir',
+        'erlang',
+        'glsl',
+        'java',
+        'php',
+        'ruby',
+        'sql',
+      ]
     },
   } satisfies Preset.ThemeConfig,
 };

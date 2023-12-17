@@ -5,4 +5,6 @@ sidebar_position: 1
 
 # About Me!
 
-Hey everyone. I'm Josh. A software developer.
+Hello there! I'm Josh, a software engineer from Kansas City.
+
+I love writing code and learning new things!
