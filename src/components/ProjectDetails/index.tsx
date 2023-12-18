@@ -36,12 +36,12 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
         </Admonition>
       )}
       {projectLink && (
-        <a href={projectLink} className={clsx(styles.link, styles.projectLink)}>
+        <a href={projectLink} target="_blank"className={clsx(styles.link, styles.projectLink)}>
           Visit Project
         </a>
       )}
       {githubLink && (
-        <a href={githubLink} className={clsx(styles.link, styles.githubLink)}>
+        <a href={githubLink} target="_blank" className={clsx(styles.link, styles.githubLink)}>
           GitHub
         </a>
       )}
