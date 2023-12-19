@@ -25,8 +25,6 @@ function Contact() {
 
   const turnstileSiteKey: string = customFields.turnstileSiteKey as string;
 
-  console.log(turnstileSiteKey);
-
   return (
     <Layout title="Contact">
       <div
