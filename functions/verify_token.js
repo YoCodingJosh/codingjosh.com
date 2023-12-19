@@ -1,4 +1,4 @@
-async function onRequestPost(context) {
+export async function onRequestPost(context) {
   const SECRET_KEY = context.env.TURNSTILE_SECRET_KEY;
   const request = context.request;
 
