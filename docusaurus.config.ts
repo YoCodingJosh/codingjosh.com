@@ -3,6 +3,8 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import type {Options as DocsOptions} from '@docusaurus/plugin-content-docs';
 
+import 'dotenv/config';
+
 const config: Config = {
   title: 'CodingJosh',
   tagline: "CodingJosh's personal website",
@@ -23,6 +25,12 @@ const config: Config = {
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
+  },
+
+  customFields: {
+    // Put your custom environment here
+    turnstileSiteKey: process.env.TURNSTILE_SITE_KEY,
+    turnstileSecretKey: process.env.TURNSTILE_SECRET_KEY,
   },
 
   presets: [
@@ -109,31 +117,39 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Important Stuff',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: 'About Me',
+              to: '/about',
+            },
+            {
+              label: 'Projects',
+              to: '/projects',
+            },
+            {
+              label: 'Contact',
+              to: '/contact',
             },
           ],
         },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
-          ],
-        },
+        // {
+        //   title: 'Community',
+        //   items: [
+        //     {
+        //       label: 'Stack Overflow',
+        //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+        //     },
+        //     {
+        //       label: 'Discord',
+        //       href: 'https://discordapp.com/invite/docusaurus',
+        //     },
+        //     // {
+        //     //   label: 'Twitter',
+        //     //   href: 'https://twitter.com/YoCodingJosh',
+        //     // },
+        //   ],
+        // },
         {
           title: 'More',
           items: [
@@ -143,7 +159,7 @@ const config: Config = {
             // },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/YoCodingJosh',
             },
           ],
         },
