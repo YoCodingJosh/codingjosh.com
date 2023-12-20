@@ -1,30 +1,56 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
-import type {Options as DocsOptions} from '@docusaurus/plugin-content-docs';
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
+import type { Options as DocsOptions } from "@docusaurus/plugin-content-docs";
 
-import 'dotenv/config';
+import "dotenv/config";
+
+const isDev = process.env.NODE_ENV === "development";
+
+const developmentAnnouncementBar = {
+  id: "development",
+  content: "⚠️ This is the development version of the site. ⚠️",
+  backgroundColor: "#fcebae",
+  textColor: "#091E42",
+  isCloseable: false,
+};
+
+const constructionAnnouncementBar = {
+  id: "construction",
+  content: "🚧👷‍♂️ This site is still under construction! 🏗️🚧",
+  backgroundColor: "#fafbfc",
+  textColor: "#091E42",
+  isCloseable: false,
+};
+
+const maintenanceAnnouncementBar = {
+  id: "maintenance",
+  content: "🔧 This site is currently under maintenance. 🔧",
+  backgroundColor: "#fafbfc",
+  textColor: "#091E42",
+  isCloseable: false,
+};
 
 const config: Config = {
-  title: 'CodingJosh',
+  title: "CodingJosh",
   tagline: "CodingJosh's personal website",
-  favicon: 'img/favicon.ico',
+  favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: 'https://codingjosh.com',
+  url: "https://codingjosh.com",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: "/",
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   customFields: {
@@ -35,19 +61,19 @@ const config: Config = {
 
   presets: [
     [
-      'classic',
+      "classic",
       {
         docs: {
-          path: 'docs',
-          routeBasePath: 'docs',
-          sidebarPath: './sidebars.ts',
+          path: "docs",
+          routeBasePath: "docs",
+          sidebarPath: "./sidebars.ts",
         },
         blog: false,
         // blog: {
         //   showReadingTime: true,
         // },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
     ],
@@ -55,11 +81,11 @@ const config: Config = {
 
   plugins: [
     [
-      'content-docs',
+      "content-docs",
       {
-        id: 'about',
-        path: 'about',
-        routeBasePath: 'about',
+        id: "about",
+        path: "about",
+        routeBasePath: "about",
         breadcrumbs: false,
         // sidebarPath: './sidebars.ts',
       } satisfies DocsOptions,
@@ -68,36 +94,31 @@ const config: Config = {
 
   themeConfig: {
     colorMode: {
-      defaultMode: 'dark',
+      defaultMode: "dark",
       disableSwitch: false,
       respectPrefersColorScheme: true,
     },
     announcementBar: {
-      id: 'supportus',
-      content:
-        '🚧👷‍♂️ This site is still under construction! 🏗️🚧',
-      backgroundColor: '#fafbfc',
-      textColor: '#091E42',
-      isCloseable: false,
+      ...(isDev ? developmentAnnouncementBar : maintenanceAnnouncementBar),
     },
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: "img/docusaurus-social-card.jpg",
     navbar: {
-      title: 'CodingJosh',
+      title: "CodingJosh",
       logo: {
-        alt: 'Cool Yunocchi',
-        src: 'img/hidamari_sketch_yuno_by_graphicsmith_d4bxvho-pre-resized.png',
+        alt: "Cool Yunocchi",
+        src: "img/hidamari_sketch_yuno_by_graphicsmith_d4bxvho-pre-resized.png",
       },
       items: [
         {
-          to: '/projects',
-          label: 'Projects',
-          position: 'left',
+          to: "/projects",
+          label: "Projects",
+          position: "left",
         },
         {
-          to: '/about',
-          label: 'About',
-          position: 'left',
+          to: "/about",
+          label: "About",
+          position: "left",
         },
         // {
         //   type: 'docSidebar',
@@ -107,29 +128,29 @@ const config: Config = {
         // },
         // {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/YoCodingJosh',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/YoCodingJosh",
+          label: "GitHub",
+          position: "right",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Important Stuff',
+          title: "Important Stuff",
           items: [
             {
-              label: 'About Me',
-              to: '/about',
+              label: "About Me",
+              to: "/about",
             },
             {
-              label: 'Projects',
-              to: '/projects',
+              label: "Projects",
+              to: "/projects",
             },
             {
-              label: 'Contact',
-              to: '/contact',
+              label: "Contact",
+              to: "/contact",
             },
           ],
         },
@@ -151,15 +172,15 @@ const config: Config = {
         //   ],
         // },
         {
-          title: 'More',
+          title: "More",
           items: [
             // {
             //   label: 'Blog',
             //   to: '/blog',
             // },
             {
-              label: 'GitHub',
-              href: 'https://github.com/YoCodingJosh',
+              label: "GitHub",
+              href: "https://github.com/YoCodingJosh",
             },
           ],
         },
@@ -170,18 +191,18 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
       additionalLanguages: [
-        'bash',
-        'c',
-        'cmake',
-        'csharp',
-        'elixir',
-        'erlang',
-        'glsl',
-        'java',
-        'php',
-        'ruby',
-        'sql',
-      ]
+        "bash",
+        "c",
+        "cmake",
+        "csharp",
+        "elixir",
+        "erlang",
+        "glsl",
+        "java",
+        "php",
+        "ruby",
+        "sql",
+      ],
     },
   } satisfies Preset.ThemeConfig,
 };
