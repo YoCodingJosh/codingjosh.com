@@ -11,6 +11,10 @@
 # Local env files
 .env
 .env.local
+.dev.vars
+
+# Wrangler temp files
+.wrangler
 
 # Misc
 .DS_Store

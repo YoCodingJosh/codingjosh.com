@@ -1,8 +1,12 @@
 {
   // This file is not used in compilation. It is here just for a nice editor experience.
   "extends": "@docusaurus/tsconfig",
+  "ignore": ["functions/**/*"],
   "compilerOptions": {
-    "baseUrl": "."
-  },
-  "types": ["@cloudflare/workers-types"]
+    "baseUrl": ".",
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["esnext"],
+    "types": ["@cloudflare/workers-types"]
+  }
 }

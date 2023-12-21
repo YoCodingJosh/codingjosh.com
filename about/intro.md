@@ -12,7 +12,7 @@ I love writing code and learning new things!
 
 ## Quick Info
 
-* 2x years old
+* nearly `0x1E` years old
 * [ISFP-T](https://www.16personalities.com/isfp-personality)
 * Passionate about coding
 * quasi-College dropout
