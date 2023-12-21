@@ -99,7 +99,7 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     announcementBar: {
-      ...(isDev ? developmentAnnouncementBar : maintenanceAnnouncementBar),
+      ...(isDev ? developmentAnnouncementBar : constructionAnnouncementBar),
     },
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
