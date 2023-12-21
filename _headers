@@ -1,14 +1,9 @@
-*
+/*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: no-referrer
   Permissions-Policy: document-domain=()
   Content-Security-Policy: script-src 'self'; frame-ancestors 'none';
-
-/api/*
-  Access-Control-Allow-Origin: https://codingjosh.com
-  Access-Control-Max-Age: 600
-  X-Powered-By: The Power of Friendship
 
 https://:project.pages.dev/*
   X-Robots-Tag: noindex
