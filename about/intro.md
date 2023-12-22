@@ -12,9 +12,8 @@ I love writing code and learning new things!
 
 ## Quick Info
 
-* nearly `0x1E` years old
 * [ISFP-T](https://www.16personalities.com/isfp-personality)
 * Passionate about coding
-* quasi-College dropout
+* Quasi-college dropout
   * have Associate (2 year), but no Bachelor's (4 year)
 * Loves Anime, Manga, and Japanese culture

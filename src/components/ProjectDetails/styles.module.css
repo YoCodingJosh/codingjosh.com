@@ -33,6 +33,11 @@
   color: #fff;
 }
 
+.projectLink:hover {
+  background-color: #4fa4ff;
+  color: #333;
+}
+
 .githubLink {
   background-color: #333;
   color: #fff;
@@ -56,7 +61,7 @@
 }
 
 [data-theme="light"] .link:hover {
-  color: #d4cfcf;
+  background-color: #d4cfcf;
 }
 
 [data-theme="dark"] .link:hover {
@@ -74,11 +79,19 @@
 }
 
 [data-theme="light"] .githubLink {
-  color: #fff;
-  background-color: #333;
+  color: #000;
+  background-color: #bebebe;
 }
 
 [data-theme="dark"] .githubLink {
   color: #333;
   background-color: #fff;
+}
+
+[data-theme="light"] .projectLink:hover {
+  background-color: #4fa4ff;
+}
+
+[data-theme="dark"] .projectLink:hover {
+  background-color: #4fa4ff;
 }
