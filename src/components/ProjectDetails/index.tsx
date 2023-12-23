@@ -11,6 +11,7 @@ interface ProjectDetailsProps {
   githubLink?: string;
   comingSoon?: boolean;
   unsupported?: boolean;
+  customInfoString?: string;
 }
 
 const ProjectDetails: React.FC<ProjectDetailsProps> = ({
@@ -20,6 +21,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
   githubLink,
   comingSoon,
   unsupported,
+  customInfoString,
 }) => {
   return (
     <div className={styles.projectDetails}>
@@ -33,6 +35,11 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
       {unsupported && (
         <Admonition type="warning">
           This project is no longer supported.
+        </Admonition>
+      )}
+      {customInfoString && (
+        <Admonition type="info">
+          {customInfoString}
         </Admonition>
       )}
       {projectLink && (

@@ -12,8 +12,9 @@ I love writing code and learning new things!
 
 ## Quick Info
 
-* [ISFP-T](https://www.16personalities.com/isfp-personality)
 * Passionate about coding
+* [ISFP-T](https://www.16personalities.com/isfp-personality)
+* Loves learning new things - especially about software dev and tech
 * Quasi-college dropout
   * have Associate (2 year), but no Bachelor's (4 year)
-* Loves Anime, Manga, and Japanese culture
+* Loves anime, manga, and Japanese culture
