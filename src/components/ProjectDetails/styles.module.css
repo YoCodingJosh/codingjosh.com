@@ -43,6 +43,16 @@
   color: #fff;
 }
 
+.technology {
+  display: inline-block;
+  padding: 4px 8px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  background-color: #fff;
+  color: #333;
+  border-radius: 5px;
+}
+
 [data-theme="light"] .projectDetails {
   background-color: #f2f2f2;
 }
@@ -94,4 +104,16 @@
 
 [data-theme="dark"] .projectLink:hover {
   background-color: #4fa4ff;
+}
+
+[data-theme="light"] .technology {
+  background-color: #fff;
+  color: #333;
+  border-radius: 5px;
+}
+
+[data-theme="dark"] .technology {
+  background-color: #5a5a5a;
+  color: #fff;
+  border-radius: 5px;
 }

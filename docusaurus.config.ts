@@ -185,7 +185,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} CodingJosh - Built with Docusaurus, Powered by CloudFlare Pages`,
+      copyright: `<div>Copyright © ${new Date().getFullYear()} CodingJosh</div><div>Built with <a href="https://docusaurus.io/" target="_blank">Docusaurus</a> &mdash; Powered by <a href="https://pages.cloudflare.com/" target="_blank">CloudFlare Pages</a></div>`,
     },
     prism: {
       theme: prismThemes.github,
