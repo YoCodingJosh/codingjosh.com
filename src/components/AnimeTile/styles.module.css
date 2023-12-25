@@ -1,0 +1,5 @@
+.animeTile {
+  margin-top: 15px;
+  /* make it half of the image's original height */
+  height: 400px;
+}
