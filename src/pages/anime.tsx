@@ -4,7 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import AnimeTile from '@site/src/components/AnimeTile';
-import { testAnimeTileDetails } from '@site/src/components/AnimeTile';
+import { testAnimeTileDetails } from '@site/src/components/AnimeTile/testData';
 import Heading from '@theme/Heading';
 
 import styles from './anime.module.css';
@@ -24,14 +24,19 @@ function HomepageHeader() {
 }
 
 export default function Home(): JSX.Element {
-  const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
       title="Anime!"
       description="CodingJosh's favorite anime and more">
       <HomepageHeader />
       <main>
-        <AnimeTile {...testAnimeTileDetails} />
+        <div className="container">
+          <div className="row">
+            {testAnimeTileDetails.map((animeTileDetails) => (
+              <AnimeTile {...animeTileDetails} />
+            ))}
+          </div>
+        </div>
         {/* <HomepageFeatures /> */}
       </main>
     </Layout>
