@@ -16,6 +16,14 @@
   color: #fff;
 }
 
+.heroBanner h1 {
+  text-shadow: 0 0 3px #000;
+}
+
+.heroBanner p {
+  text-shadow: 0 0 3px #000;
+}
+
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;

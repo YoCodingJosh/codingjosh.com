@@ -1,5 +1,6 @@
 .animeTile {
   margin-top: 15px;
+  width: 90%;
 }
 
 @media screen and (max-width: 1024px) {
@@ -31,6 +32,13 @@
   border-radius: 5px;
 }
 
+@media screen and (max-width: 1024px) {
+  .genre {
+    font-size: 0.75rem;
+    margin-right: 5px;
+  }
+}
+
 .link {
   display: inline-block;
   padding: 4px 8px;
@@ -55,14 +63,4 @@
 
 .anilistLink {
   display: block;
-}
-
-[data-theme="light"] .anilistLink {
-  /* light border */
-  border: 1px solid #e9e9e9;
-}
-
-[data-theme="dark"] .anilistLink {
-  /* dark border */
-  border: 1px solid #5a5a5a;
 }
