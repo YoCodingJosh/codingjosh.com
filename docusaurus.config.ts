@@ -154,6 +154,23 @@ const config: Config = {
             },
           ],
         },
+        {
+          title: "Interests",
+          items: [
+            {
+              label: "Anime",
+              to: "/anime",
+            },
+            // {
+            //   label: "Manga",
+            //   to: "/manga",
+            // },
+            // {
+            //   label: "Games",
+            //   to: "/games",
+            // },
+          ],
+        },
         // {
         //   title: 'Community',
         //   items: [

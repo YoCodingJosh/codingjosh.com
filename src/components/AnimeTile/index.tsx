@@ -15,7 +15,7 @@ const AnimeTile: React.FC<AnimeTileDetails> = ({
   aniListLink,
 }) => {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--2', styles.colOverride)}>
       <div className="text--center">
         <Tilt>
           <img
@@ -32,6 +32,26 @@ const AnimeTile: React.FC<AnimeTileDetails> = ({
           {genres.map((genre) => (
             <span className={styles.genre}>{genre}</span>
           ))}
+        </div>
+        <div className={styles.links}>
+          {malLink && (
+            <a href={malLink} target="_blank" rel="noreferrer">
+              <img
+                src="https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png"
+                alt="MyAnimeList"
+                className={clsx(styles.link)}
+              />
+            </a>
+          )}
+          {aniListLink && (
+            <a href={aniListLink} target="_blank" rel="noreferrer">
+              <img
+                src="https://anilist.co/img/icons/android-chrome-512x512.png"
+                alt="AniList"
+                className={clsx(styles.link, styles.aniListLink)}
+              />
+            </a>
+          )}
         </div>
       </div>
     </div>

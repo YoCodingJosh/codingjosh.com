@@ -10,7 +10,7 @@ import Heading from '@theme/Heading';
 import styles from './anime.module.css';
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -30,14 +30,22 @@ export default function Home(): JSX.Element {
       description="CodingJosh's favorite anime and more">
       <HomepageHeader />
       <main>
-        <div className="container">
+        <section>
+          <div className="container">
+            <div className="text--center">
+              <Heading as="h2">My Favorite Anime</Heading>
+              <p>These are my favorite anime, in no particular order.</p>
+              <small>todo: put details in a hover-over</small>
+            </div>
+          </div>
+        </section>
+        <div className={clsx("container", styles.wideContainer)}>
           <div className="row">
             {testAnimeTileDetails.map((animeTileDetails) => (
               <AnimeTile {...animeTileDetails} />
             ))}
           </div>
         </div>
-        {/* <HomepageFeatures /> */}
       </main>
     </Layout>
   );

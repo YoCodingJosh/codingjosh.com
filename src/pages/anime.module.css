@@ -3,6 +3,10 @@
  * and scoped locally.
  */
 
+.wideContainer {
+  max-width: 100vw;
+}
+
 .heroBanner {
   padding: 4rem 0;
   text-align: center;
