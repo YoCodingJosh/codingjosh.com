@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
@@ -23,7 +24,7 @@ function HomepageHeader() {
   );
 }
 
-export default function Home(): JSX.Element {
+export function HomeElement(): JSX.Element {
   return (
     <Layout
       title="Anime!"
@@ -48,5 +49,13 @@ export default function Home(): JSX.Element {
         </div>
       </main>
     </Layout>
+  );
+}
+
+export default function Home(): JSX.Element {
+  return (
+    <BrowserOnly fallback={<div>Loading...</div>}>
+      {() => <HomeElement />}
+    </BrowserOnly>
   );
 }
