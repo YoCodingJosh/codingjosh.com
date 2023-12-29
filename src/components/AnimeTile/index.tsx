@@ -15,7 +15,7 @@ const AnimeTile: React.FC<AnimeTileDetails> = ({
   aniListLink,
 }) => {
   return (
-    <div className={clsx('col col--2', styles.colOverride)}>
+    <>
       <div className="text--center">
         <Tilt>
           <img
@@ -54,7 +54,7 @@ const AnimeTile: React.FC<AnimeTileDetails> = ({
           )}
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

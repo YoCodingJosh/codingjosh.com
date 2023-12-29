@@ -10,7 +10,7 @@ export const onRequest: PagesFunction<Env> = async (context) => {
 
   response.headers.set('Access-Control-Allow-Origin', origin);
   response.headers.set('Access-Control-Max-Age', '600');
-  response.headers.set('X-Powered-By', 'The Power of Friendship');
+  response.headers.set('X-Powered-By', 'your mom lol');
 
   return response;
 };

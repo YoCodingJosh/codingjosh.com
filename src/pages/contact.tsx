@@ -11,17 +11,35 @@
 
 // const { siteConfig: {customFields} } = useDocusaurusContext();
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Layout from '@theme/Layout';
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import { Turnstile } from '@marsidev/react-turnstile';
 
-function Contact() {
+export default function Contact() {
   const {
     siteConfig: { customFields },
   } = useDocusaurusContext();
+
+  useEffect(() => {
+    // call our /contact endpoint (GET) to see if the service is available
+    fetch('/api/contact')
+      .then((res) => {
+        if (res.status === 200) {
+          // if it is, then we can show the Turnstile
+          console.log(res.text ?? 'Contact service is available.');
+        } else {
+          // if it is not, then we can hide the Turnstile
+          console.log(res.text ?? 'Contact service is not available.');
+        }
+      })
+      .catch((err) => {
+        // if it is not, then we can hide the Turnstile
+        console.log(err ?? 'Contact service is not available.');
+      });
+  }, [])
 
   const turnstileSiteKey: string = customFields.turnstileSiteKey as string;
 
@@ -45,5 +63,3 @@ function Contact() {
     </Layout>
   );
 }
-
-export default Contact;

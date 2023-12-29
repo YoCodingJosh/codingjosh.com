@@ -43,7 +43,9 @@ export function HomeElement(): JSX.Element {
         <div className={clsx("container", styles.wideContainer)}>
           <div className="row">
             {testAnimeTileDetails.map((animeTileDetails) => (
-              <AnimeTile {...animeTileDetails} />
+              <div className={clsx('col col--2', styles.colOverride)}>
+                <AnimeTile {...animeTileDetails} />
+              </div>
             ))}
           </div>
         </div>

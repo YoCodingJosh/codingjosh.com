@@ -3,13 +3,6 @@
   width: 90%;
 }
 
-@media screen and (max-width: 1024px) {
-  .colOverride {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-}
-
 .genre {
   display: inline-block;
   padding: 4px 8px;
