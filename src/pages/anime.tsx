@@ -1,9 +1,6 @@
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import BrowserOnly from '@docusaurus/BrowserOnly';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import AnimeTile from '@site/src/components/AnimeTile';
 import { testAnimeTileDetails } from '@site/src/components/AnimeTile/testData';
 import Heading from '@theme/Heading';
@@ -11,7 +8,6 @@ import Heading from '@theme/Heading';
 import styles from './anime.module.css';
 
 function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -24,7 +20,7 @@ function HomepageHeader() {
   );
 }
 
-export function HomeElement(): JSX.Element {
+export default function Home(): JSX.Element {
   return (
     <Layout
       title="Anime!"
@@ -51,13 +47,5 @@ export function HomeElement(): JSX.Element {
         </div>
       </main>
     </Layout>
-  );
-}
-
-export default function Home(): JSX.Element {
-  return (
-    <BrowserOnly fallback={<div>Loading...</div>}>
-      {() => <HomeElement />}
-    </BrowserOnly>
   );
 }
