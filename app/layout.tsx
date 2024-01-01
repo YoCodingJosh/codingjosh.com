@@ -12,6 +12,8 @@ export const metadata: Metadata = {
   description: 'personal website for CodingJosh, a software engineer',
 };
 
+export const runtime = 'edge';
+
 export default function RootLayout({
   children,
 }: {
