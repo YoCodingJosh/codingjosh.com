@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@cloudflare/workers-types": "^4.20231218.0",
     "@marsidev/react-turnstile": "^0.4.0",
     "@mdx-js/loader": "^3.0.0",
     "@mdx-js/react": "^3.0.0",
@@ -22,7 +23,6 @@
     "sass": "^1.69.6"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20231218.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
