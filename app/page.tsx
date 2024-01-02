@@ -4,7 +4,9 @@ export default function Home() {
   return (
     <main>
       <HeroBanner />
-      <p>Under construction</p>
+      <div className="container">
+        <p>Under construction</p>
+      </div>
     </main>
   )
 };
