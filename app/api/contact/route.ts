@@ -9,7 +9,7 @@ const unavailableMessage = "This contact form is temporarily unavailable. Please
 export async function GET() {
   let contactStatus: ContactStatus | null = null;
 
-  if (process.env.GLOBAL_CONFIG != undefined) {
+  if (process.env.GLOBAL_CONFIG !==undefined) {
     contactStatus = await process.env.GLOBAL_CONFIG.get<ContactStatus>("contactStatus", "json");
   }
 
@@ -22,7 +22,7 @@ export async function GET() {
       message,
     };
 
-    return Response.json(response, {
+    return new Response(JSON.stringify(response), {
       status: 503
     });
   } else {
@@ -33,6 +33,6 @@ export async function GET() {
       message,
     };
 
-    return Response.json(response);
+    return new Response(JSON.stringify(response));
   }
 }
