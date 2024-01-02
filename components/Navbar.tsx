@@ -3,10 +3,42 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { useState } from 'react';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+interface MenuItemsProps {
+  className: string;
+  pathname: string;
+};
+
+const MenuItems = ({ className, pathname }: MenuItemsProps) => (
+  <>
+    <Link href="/" className={`${className} text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium ${pathname === '/' ? 'bg-gray-900' : 'bg-gray-800'}`}>
+      Home
+    </Link>
+    <Link href="/dashboard" className={`${className} text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium ${pathname === '/dashboard' ? 'bg-gray-900' : 'bg-gray-800'}`}>
+      Dashboard
+    </Link>
+    <Link href="/team" className={`${className} text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium`}>
+      Team
+    </Link>
+    <Link href="/projects" className={`${className} text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium`}>
+      Projects
+    </Link>
+    <Link href="/calendar" className={`${className} text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium`}>
+      Calendar
+    </Link>
+    <Link href="/contact" className={`${className} text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium ${pathname === '/contact' ? 'bg-gray-900' : 'bg-gray-800'}`}>
+      Contact
+    </Link>
+  </>
+);
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const pathname = usePathname();
 
   return (
     <nav className="bg-gray-800">
@@ -54,39 +86,15 @@ export default function Navbar() {
           </div>
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex-shrink-0 flex items-center">
-              <img
-                className="block lg:hidden h-8 w-auto"
-                src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                alt="Workflow"
-              />
-              <img
-                className="hidden lg:block h-8 w-auto"
-                src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                alt="Workflow"
-              />
+              <Link href="/"> <img src="/images/hidamari_sketch_yuno_by_graphicsmith_d4bxvho-pre-resized.png" className="mr-3 h-10 sm:h-10" alt="Cool Yunocchi" /></Link>
+              <Link href="/" className="text-white text-2xl font-semibold">
+                CodingJosh
+              </Link>
             </div>
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
-                <Link href="/">
-                  <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                    Dashboard
-                  </a>
-                </Link>
-                <Link href="/team">
-                  <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                    Team
-                  </a>
-                </Link>
-                <Link href="/projects">
-                  <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                    Projects
-                  </a>
-                </Link>
-                <Link href="/calendar">
-                  <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                    Calendar
-                  </a>
-                </Link>
+                <MenuItems pathname={pathname} className="text-white" />
+                {/* <MenuItems className="px-3 py-2 rounded-md text-sm font-medium" /> */}
               </div>
             </div>
           </div>
@@ -95,26 +103,8 @@ export default function Navbar() {
 
       <div className={`${isOpen ? 'block' : 'hidden'} sm:hidden`} id="mobile-menu">
         <div className="px-2 pt-2 pb-3 space-y-1">
-          <Link href="/">
-            <a className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-              Dashboard
-            </a>
-          </Link>
-          <Link href="/team">
-            <a className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-              Team
-            </a>
-          </Link>
-          <Link href="/projects">
-            <a className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-              Projects
-            </a>
-          </Link>
-          <Link href="/calendar">
-            <a className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-              Calendar
-            </a>
-          </Link>
+          <MenuItems pathname={pathname} className="text-white" />
+          {/* <MenuItems className="block px-3 py-2 rounded-md text-base font-medium" /> */}
         </div>
       </div>
     </nav>

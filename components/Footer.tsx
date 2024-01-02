@@ -6,13 +6,12 @@ export default function MyFooter() {
       <FooterCopyright by="CodingJosh" year={new Date().getFullYear()} />
       <FooterLinkGroup>
         <FooterLink href="#">About</FooterLink>
-        <FooterLink href="#">Privacy Policy</FooterLink>
-        <FooterLink href="#">Licensing</FooterLink>
+        <FooterLink href="/privacy">Privacy Policy</FooterLink>
         <FooterLink href="/contact">Contact</FooterLink>
       </FooterLinkGroup>
       <div>
         <small className='text-center text-gray-500 dark:text-gray-400'>
-          Built with <a href="https://nuxt.com/" target="_blank">Nuxt</a> &ndash; Powered by <a href="https://pages.cloudflare.com/" target="_blank">Cloudflare Pages</a>
+          Built with <a href="https://nextjs.org/" target="_blank">Next</a> &ndash; Powered by <a href="https://pages.cloudflare.com/" target="_blank">Cloudflare Pages</a>
         </small>
       </div>
     </Footer>
