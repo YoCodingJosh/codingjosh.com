@@ -216,7 +216,7 @@ const config: Config = {
         // "erlang",
         // "glsl",
         // "java",
-        "php",
+        // "php",
         "ruby",
         "sql",
       ],

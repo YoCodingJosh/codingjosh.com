@@ -3,11 +3,6 @@
  * and scoped locally.
  */
 
-.colOverride {
-  flex: 0 0 50% !important;
-  max-width: 50% !important;
-}
-
 @media screen and (max-width: 1024px) {
   .colOverride {
     flex: 0 0 50% !important;
