@@ -202,7 +202,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `<div>Copyright © ${new Date().getFullYear()} CodingJosh</div><div>Built with <a href="https://docusaurus.io/" target="_blank">Docusaurus</a> &mdash; Powered by <a href="https://pages.cloudflare.com/" target="_blank">CloudFlare Pages</a></div>`,
+      copyright: `<div>Copyright © ${new Date().getFullYear()} CodingJosh</div><div>Built with <a href="https://docusaurus.io/" target="_blank">Docusaurus</a> &mdash; Powered by <a href="https://pages.cloudflare.com/" target="_blank">Cloudflare Pages</a></div>`,
     },
     prism: {
       theme: prismThemes.github,
