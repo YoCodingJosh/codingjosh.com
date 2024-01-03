@@ -162,6 +162,14 @@ const temple: AnimeTileDetails = {
   aniListLink: 'https://anilist.co/anime/160447/Temple/',
 };
 
+const machikadoMazoku: AnimeTileDetails = {
+  title: "The Demon Girl Next Door",
+  genres: ['Comedy', 'Fantasy', 'Mahou Shoujo', 'Slice of Life', 'CGDCT'],
+  image: 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx107490-wolT0UvNSetx.png',
+  malLink: 'https://myanimelist.net/anime/39071/Machikado_Mazoku',
+  aniListLink: 'https://anilist.co/anime/107490/Machikado-Mazoku/',
+};
+
 const kobayashiDragonMaid: AnimeTileDetails = {
   title: "Miss Kobayashi's Dragon Maid",
   genres: ['Comedy', 'Fantasy', 'Slice of Life', 'CGDCT'],
@@ -194,6 +202,14 @@ const working: AnimeTileDetails = {
   aniListLink: 'https://anilist.co/anime/6956/Working/',
 };
 
+const saikiK: AnimeTileDetails = {
+  title: 'The Disastrous Life of Saiki K.',
+  genres: ['Comedy', 'Slice of Life', 'Supernatural'],
+  image: 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21804-AAjWfz9JY1EO.jpg',
+  malLink: 'https://myanimelist.net/anime/33255/Saiki_Kusuo_no_%CE%A8-nan',
+  aniListLink: 'https://anilist.co/anime/21804/Saiki-Kusuo-no-nan/',
+};
+
 export const testAnimeTileDetails: AnimeTileDetails[] = [
   kaguyaSama,
   gochiUsa,
@@ -201,11 +217,13 @@ export const testAnimeTileDetails: AnimeTileDetails[] = [
   frieren,
   bocchiTheRock,
   konosuba,
+  machikadoMazoku,
   dfrag,
   rezero,
   yuruYuri,
   onehundredKanojo,
   madokaMagica,
+  saikiK,
   bakemonogatari,
   yuyushiki,
   yuruCamp,
@@ -215,7 +233,7 @@ export const testAnimeTileDetails: AnimeTileDetails[] = [
   jojo,
   gabrielDropout,
   nichijou,
-  temple,
+  // temple,
   kobayashiDragonMaid,
   bofuri,
   working,

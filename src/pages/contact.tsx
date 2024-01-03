@@ -1,16 +1,3 @@
-// # Contact Me
-
-// Here you can send me a message. I will try to answer as soon as possible.
-
-// ## Code of Conduct:
-// - If you are trying to sell me something, please don't. I am not interested.
-//   - **You will be marked as spam.**
-// - If you are trying to hire me, I don't know yet lol.
-
-// import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-
-// const { siteConfig: {customFields} } = useDocusaurusContext();
-
 import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
 

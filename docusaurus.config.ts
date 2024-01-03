@@ -63,11 +63,6 @@ const config: Config = {
     [
       "classic",
       {
-        docs: {
-          path: "docs",
-          routeBasePath: "docs",
-          sidebarPath: "./sidebars.ts",
-        },
         blog: false,
         // blog: {
         //   showReadingTime: true,
@@ -120,13 +115,6 @@ const config: Config = {
           label: "About",
           position: "left",
         },
-        // {
-        //   type: 'docSidebar',
-        //   sidebarId: 'tutorialSidebar',
-        //   position: 'left',
-        //   label: 'Tutorial',
-        // },
-        // {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: "https://github.com/YoCodingJosh",
           label: "GitHub",
@@ -202,7 +190,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `<div>Copyright © ${new Date().getFullYear()} CodingJosh</div><div>Built with <a href="https://docusaurus.io/" target="_blank">Docusaurus</a> &mdash; Powered by <a href="https://pages.cloudflare.com/" target="_blank">Cloudflare Pages</a></div>`,
+      copyright: `<div>Copyright © ${new Date().getFullYear()} CodingJosh</div><div>Built with <a href="https://docusaurus.io/" target="_blank">Docusaurus</a> &ndash; Powered by <a href="https://pages.cloudflare.com/" target="_blank">Cloudflare Pages</a></div>`,
     },
     prism: {
       theme: prismThemes.github,
