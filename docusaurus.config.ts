@@ -34,7 +34,7 @@ const maintenanceAnnouncementBar = {
 const config: Config = {
   title: "CodingJosh",
   tagline: "CodingJosh's personal website",
-  favicon: "img/favicon.ico",
+  favicon: "favicon.ico",
 
   // Set the production url of your site here
   url: "https://codingjosh.com",
