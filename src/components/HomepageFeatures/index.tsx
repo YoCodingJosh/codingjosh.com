@@ -28,11 +28,11 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Powered by Caffeine',
+    title: 'Lifelong Learner',
     Svg: require('@site/static/img/undraw_drink_coffee_v3au.svg').default,
     description: (
       <>
-        Soda, coffee, energy drinks, you name it. I'm powered by caffeine. Doesn't make me any less tired or any more productive, but I'm powered by it.
+        I'm always looking to learn something new, whether it's a new programming language or a new skill.
       </>
     ),
   },

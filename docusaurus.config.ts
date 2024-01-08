@@ -111,6 +111,18 @@ const config: Config = {
           position: "left",
         },
         {
+          type: 'dropdown',
+          label: 'Interests',
+          position: 'left',
+          items: [
+            {
+              label: 'Anime',
+              to: '/anime',
+            },
+            // ... more items
+          ],
+        },
+        {
           to: "/about",
           label: "About",
           position: "left",
@@ -177,7 +189,7 @@ const config: Config = {
         //   ],
         // },
         {
-          title: "More",
+          title: "Links",
           items: [
             // {
             //   label: 'Blog',
