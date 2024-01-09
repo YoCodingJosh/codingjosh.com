@@ -18,4 +18,4 @@ I love writing code and learning new things!
 * Quasi-college dropout
   * have Associate (2 year), but no Bachelor's (4 year)
 * Loves anime, manga, and Japanese culture
-* Loves junk food
+* Loves junk food - especially pizza and pop

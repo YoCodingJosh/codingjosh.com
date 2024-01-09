@@ -6,7 +6,7 @@ hide_table_of_contents: true
 
 I'm a generalist software engineer, a jack of all trades, if you will.
 
-I can do frontend, backend, native apps for desktop and mobile, along with some DevOps and system administration.
+I can do frontend, backend, native apps for desktop and mobile, along with some light DevOps and system administration.
 
 If I don't know something, I can learn it pretty quickly!
 
@@ -19,27 +19,53 @@ import TabItem from '@theme/TabItem';
 
 <Tabs>
   <TabItem value="programming-languages" label="Programming Languages" default>
-    <h3>Proficient</h3>
-    - TypeScript
-    - JavaScript
-    - C#
-    - Java
-    - C++
-    - PHP
-    - SQL
-    - HTML
-    - CSS
+    <div className="language-skills">
+      <div>
+        <h3>Proficient</h3>
+        - TypeScript
+        - JavaScript
+        - C#
+        - Java
+        - C++
+        - C
+        - PHP
+        - SQL
+        - HTML
+        - CSS
+      </div>
 
-    <h3>Intermediate</h3>
-    - Ruby
-    - Python
-    - Elixir
+      <div>
+        <h3>Intermediate</h3>
+        - Ruby
+        - Python
+      </div>
 
-    <h3>Beginner</h3>
-    - Rust
-    - Go
-    - Fortran
-    - x86 Assembly
+      <div>
+        <h3>Beginner</h3>
+        - Elixir
+        - Fortran
+        - x86 Assembly
+      </div>
+    </div>
+
+    <style jsx>{`
+      .language-skills {
+        display: flex;
+        justify-content: flex-start;
+      }
+      .language-skills > div:not(:last-child) {
+        margin-right: 50px;
+      }
+      @media (max-width: 600px) {
+        .language-skills {
+          flex-direction: column;
+        }
+        .language-skills > div:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+      }
+    `}</style>
   </TabItem>
   <TabItem value="frameworks" label="Frameworks">
     <h4>Frontend</h4>
@@ -48,6 +74,7 @@ import TabItem from '@theme/TabItem';
     - React
     - React Native
     - Angular
+    - Docusaurus
 
     <h4>Backend</h4>
     - ASP.NET Core
@@ -73,7 +100,17 @@ import TabItem from '@theme/TabItem';
     - Google Cloud Platform
   </TabItem>
   <TabItem value="tools" label="Tools">
-    This is an apple pen 🍎✏️
+    - Visual Studio Code
+    - JetBrains IDEs
+    - Xcode
+    - Git
+    - Docker
+    - Vim
+    - Bash
+    - Zsh
+    - Windows Terminal
+    - iTerm2
+    - Warp
   </TabItem>
   <TabItem value="operating-systems" label="Operating Systems">
     - macOS
@@ -83,5 +120,3 @@ import TabItem from '@theme/TabItem';
     I use Windows, macOS, and Linux (through WSL) on a daily basis.
   </TabItem>
 </Tabs>
-
-
