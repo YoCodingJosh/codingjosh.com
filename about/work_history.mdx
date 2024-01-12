@@ -8,26 +8,67 @@ hide_table_of_contents: true
 
 import WorkHistoryItem from '@site/src/components/WorkHistoryItem';
 
-<WorkHistoryItem title="Software Engineer III" industry="Healthcare Technology - Hospice & Palliative Care"
-  startDate="August 2023" tldr="Ruby on Rails web development using Angular and Google Cloud">
-  ### Full-stack web development using Ruby on Rails 4, AngularJS 1.6, and Angular 11.
-
-  Deployed to Google Cloud Platform using Kubernetes.
-
-  TODO: finish this
+### Current Position
+<WorkHistoryItem title="Software Engineer III" industry="Healthcare Technology - Hospice and Palliative" skills={['Ruby', 'Rails', 'TypeScript', 'Angular', 'SQL', 'Docker']}
+  startDate="August 2023" tldr="Ruby on Rails 4 web development using Angular (1 and 11) and Google Cloud Platform">
+  * Generally worked on the financial side of the application, which included billing, claims processing, and reporting.
+  * Added a new feature to the EMR application to allow billing specialists to view and edit office code assignments for better billing reporting.
+    * This was accomplished by adding a new page to the Angular 11 application and a new Grape API endpoint to the Ruby on Rails application.
+  * Led several releases which cherry-picked feature branches and deployed them to Google Cloud Platform using Kubernetes.
+  * Investigated and created workflow diagrams for understanding how certain features worked.
+    * These were previously undocumented and were needed for a new feature.
+  * Manual QA testing of features and bug fixes when needed.
+  * Investigated and debugged issues in a Node.js-based TTY emulator microservice.
+  * Added some improvements to Docker images for local development on Apple Silicon Macs.
+  * On-call rotation for production support.
 </WorkHistoryItem>
 
+---
+
 <WorkHistoryItem title="Software Engineer" industry="Consulting" startDate="January 2021" endDate="August 2023"
-  tldr="software development for various clients">
+  tldr="Custom software developemnt for various clients" skills={['C#', 'SQL', 'TypeScript', 'React', 'Angular', 'React Native']}>
+  * Client 1: Worked on a team of 4 software engineers to work on backend server logic for a home care clinical iOS application.
+    * This primarily included adding new features.
+    * The backend was written in C# using .NET Framework 4 and SQL Server.
+    * Some auxiliary web development was done using ASP.NET MVC, Bootstrap, and jQuery.
+    * With the help of me and a co-worker, we were able help the client achieve their goal of finishing the scheduled work a month early.
+  * Client 2: Worked on a team of 8 software engineers to work on a web application conversion of a legacy desktop application.
+    * This primarily included adding new features and bug fixes.
+    * The backend was written in C# using .NET Core 3 and PostgreSQL.
+    * The frontend was written in Angular 10.
+  * Client 3: Worked on a team of 5 software engineers to uplift of a feature in a legacy web application.
+    * Our role was to remake a drug entry grid that was originally written in ASP.NET Web Forms.
+    * This was done using React, TypeScript, Material UI, and RTK Query.
+    * This was implemented as a microfrontend using Lerna and Webpack.
+    * Portions of the component were written in Stencil.js
+  * Client 4: Worked on a team of 5 software engineers working on a mobile application for a IoT PaaS company.
+    * We added features to the subscription and account management portions of the application using React Native, TypeScript, and MobX.
+    * Some work was done on the backend using AWS Lambda and MongoDB.
+    * Some work was done in the iOS native code using Objective-C.
 </WorkHistoryItem>
 
 <WorkHistoryItem title="Cybersecurity Engineer" industry="Telecommunications" startDate="January 2019" endDate="January 2021"
-  tldr="SSO application management with some software development">
-  * Created people finder and org chart application using React and Java 8 interfacing with Active Directory
-  * Redesigned Siteminder log in pages to use modern HTML5, CSS, and JavaScript. (They were originally written in 2005)
+  tldr="SSO application management with some software development" skills={['Linux', 'JavaScript', 'React', 'Shell Scripting', 'Java']}>
+  * Created people finder and org chart application using React and Java 8 interfacing with Active Directory.
+  * Redesigned Siteminder log in pages to use modern HTML5, CSS, and JavaScript to reflect company rebranding. They were originally written in 2005!
   * Created injest API endpoint for importing OAuth2 JSON configuration files into ForgeRock OpenAM using Node.js and Express.js
   * Wrote batch script to automate the import and deletion of users from a test AD environment.
   * Patched Siteminder and ForgeRock instances and deployed new agents to servers.
 </WorkHistoryItem>
 
-more to come!
+<WorkHistoryItem title="Software Development Contractor" industry="Smart Transportation" startDate="September 2018" endDate="December 2018 (Contract Ended)"
+  tldr="Worked on traffic managment system using C#, ASP.NET, and Vue.js and implemented DevOps and DevSecOps tools and practices"
+  skills={['C#', 'SQL', 'JavaScript', 'Vue.js']}>
+  * Worked on bug fixes and feature development for a traffic management system using C#, ASP.NET, Vue.js, Knockout, and a lot of T-SQL stored procedures.
+  * Added logic to hash new user passwords using C#, BCrypt, and T-SQL.
+  * Wrote C# program to hash existing passwords.
+  * Added feature in the password reset page that checks the "Have I Been Pwned" API to see if the password has been compromised.
+  * Implemented a basic CI/CD pipeline using Jenkins that would build and deploy the application to a test server.
+  * Implemented a basic security scanning pipeline using SonarQube that would scan the code for vulnerabilities.
+    * This had the benefit of helping a co-worker who was trying to debug a sporadic NullPointerException in a Java application.
+    * This was tied into the CI/CD pipeline so that the build would fail if the code quality was too low.
+</WorkHistoryItem>
+
+<WorkHistoryItem title="Software Engineer" industry="Civilian Federal Government Contracting" startDate="October 2017" endDate="September 2018"
+  tldr='Full stack Java development using Java 6/7' skills={['Java', 'SQL', 'JSP', 'Spring MVC', 'JavaScript', 'Bootstrap']}>
+</WorkHistoryItem>

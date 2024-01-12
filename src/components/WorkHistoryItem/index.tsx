@@ -36,6 +36,11 @@ interface WorkHistoryItemProps {
    * A short description of the job.
    */
   tldr?: string;
+
+  /**
+   * The tech skills that were used in the job.
+   */
+  skills?: string[];
 }
 
 const WorkHistoryItem: React.FC<PropsWithChildren<WorkHistoryItemProps>> = (props) => {
@@ -63,6 +68,14 @@ const WorkHistoryItem: React.FC<PropsWithChildren<WorkHistoryItemProps>> = (prop
           </>
         )}
       </span>
+      {props.skills && (<div>
+        {props.skills.map((skill) => (
+          <span key={skill} className={styles.skill}>
+            {skill}
+          </span>
+        ))}
+      </div>
+      )}
     </div>
   );
 };
