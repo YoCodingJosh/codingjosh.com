@@ -1,4 +1,5 @@
 import React, { PropsWithChildren, useState } from 'react';
+import clsx from 'clsx';
 import styles from './styles.module.css';
 
 interface WorkHistoryItemProps {
@@ -9,14 +10,14 @@ interface WorkHistoryItemProps {
 
   /**
    * The company name.
-   * 
+   *
    * Optional, use the `jobIndustry` prop if you want to not show the company name.
    */
   companyName?: string;
 
   /**
    * The industry that the job is in.
-   * 
+   *
    * This can be used if we want to not show the company name.
    */
   industry?: string;
@@ -44,9 +45,9 @@ const WorkHistoryItem: React.FC<PropsWithChildren<WorkHistoryItemProps>> = (prop
     <div className={styles.workHistoryItem}>
       <h3 className={styles.jobTitle}>{props.title}</h3>
       {props.companyName && <p>{props.companyName}</p>}
-      <button className={styles.detailsButton} onClick={() => setShowDetails(!showDetails)}>
-        {showDetails ? 'Hide' : 'Show'} Details
-      </button>
+      {props.children && <div className={styles.detailsButton} onClick={() => setShowDetails(!showDetails)}>
+        <h1 className={`chevron ${showDetails ? 'down' : 'right'}`} ></h1>
+      </div>}
       <p>
         <span>
           {props.startDate} &mdash; {props.endDate || 'Present'}
@@ -54,12 +55,14 @@ const WorkHistoryItem: React.FC<PropsWithChildren<WorkHistoryItemProps>> = (prop
       </p>
       {props.industry && <p>Industry: {props.industry}</p>}
       {props.tldr && <p>Summary: {props.tldr}</p>}
-      {showDetails && (
-        <>
-          <hr></hr>
-          {props.children}
-        </>
-      )}
+      <span>
+        {showDetails && (
+          <>
+            <hr />
+            {props.children}
+          </>
+        )}
+      </span>
     </div>
   );
 };

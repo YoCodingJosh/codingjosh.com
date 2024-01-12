@@ -30,7 +30,7 @@ const AnimeTile: React.FC<AnimeTileDetails> = ({
         {description && <p>{description}</p>}
         <div className={styles.genres}>
           {genres.map((genre) => (
-            <span className={styles.genre}>{genre}</span>
+            <span className={styles.genre} key={`${genre}-key`}>{genre}</span>
           ))}
         </div>
         <div className={styles.links}>

@@ -39,7 +39,7 @@ export default function Home(): JSX.Element {
         <div className={clsx("container", styles.wideContainer)}>
           <div className="row">
             {testAnimeTileDetails.map((animeTileDetails) => (
-              <div className={clsx('col col--2', styles.colOverride)}>
+              <div className={clsx('col col--2', styles.colOverride)} key={`${animeTileDetails.title}`}>
                 <AnimeTile {...animeTileDetails} />
               </div>
             ))}

@@ -4,8 +4,6 @@
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-
-  /* TODO: animate the height when the details button is clicked */
 }
 
 [data-theme="light"] .workHistoryItem {
@@ -19,14 +17,16 @@
 
 .detailsButton {
   cursor: pointer;
-
-  /* width: 10px;
-  height: 10px; */
-  margin-left: 5px;
-  transform: rotate(0deg);
-  transition: transform 0.3s ease-in-out;
-
   float: right;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+
+  margin-right: 25px;
 }
 
 .jobTitle {
