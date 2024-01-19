@@ -11,23 +11,23 @@ import WorkHistoryItem from '@site/src/components/WorkHistoryItem';
 ### Current Position
 <WorkHistoryItem title="Software Engineer III" industry="Healthcare Technology - Hospice and Palliative" skills={['Ruby', 'Rails', 'TypeScript', 'Angular', 'SQL', 'Docker']}
   startDate="August 2023" tldr="Ruby on Rails 4 web development using Angular (1 and 11) and Google Cloud Platform">
-  * Generally worked on the financial side of the application, which included billing, claims processing, and reporting.
+  * Generally worked on the financial side of an EMR application, which included billing, claims processing, and reporting.
   * Added a new feature to the EMR application to allow billing specialists to view and edit office code assignments for better billing reporting.
-    * This was accomplished by adding a new page to the Angular 11 application and a new Grape API endpoint to the Ruby on Rails application.
+    * This was accomplished by adding a new page to the Angular 11 application, updating a Grape endpoint, and a migration to add the new office code column.
   * Led several releases which cherry-picked feature branches and deployed them to Google Cloud Platform using Kubernetes.
   * Wrote Ruby scripts to export payer detail data from production, and then import it into lower environments.
-  * Investigated and created workflow diagrams for understanding how certain features worked.
+  * Investigated and created workflow and database diagrams for understanding how certain features worked.
     * These were previously undocumented and were needed for a new feature.
-  * Manual QA testing of features and bug fixes when needed.
   * Investigated and debugged issues in a Node.js-based TTY emulator microservice.
-  * Added some improvements to Docker images for local development on Apple Silicon Macs.
+  * Made some improvements to Docker images for local development on Apple Silicon Macs.
   * On-call rotation for production support.
+  * Manual QA testing of tickets when needed.
 </WorkHistoryItem>
 
 ---
 
 <WorkHistoryItem title="Software Engineer" industry="Consulting" startDate="January 2021" endDate="August 2023"
-  tldr="Custom software developemnt for various clients" skills={['C#', 'SQL', 'TypeScript', 'React', 'Angular', 'React Native']}>
+  tldr="Custom software development for various clients" skills={['C#', 'SQL', 'TypeScript', 'React', 'Angular', 'React Native']}>
   * Client 1: Worked on a team of 4 software engineers to work on backend server logic for a home care clinical iOS application.
     * This primarily included adding new features.
     * The backend was written in C# using .NET Framework 4 and SQL Server.
@@ -41,20 +41,21 @@ import WorkHistoryItem from '@site/src/components/WorkHistoryItem';
     * Our role was to remake a drug entry grid that was originally written in ASP.NET Web Forms.
     * This was done using React, TypeScript, Material UI, and RTK Query.
     * This was implemented as a microfrontend using Lerna and Webpack.
-    * Portions of the component were written in Stencil.js
+    * Some components were written in Stencil.js
   * Client 4: Worked on a team of 5 software engineers working on a mobile application for a IoT PaaS company.
     * We added features to the subscription and account management portions of the application using React Native, TypeScript, and MobX.
     * Some work was done on the backend using AWS Lambda and MongoDB.
+    * Some work was done on the web application using React, TypeScript, and Redux.
     * Some work was done in the iOS native code using Objective-C.
 </WorkHistoryItem>
 
 <WorkHistoryItem title="Cybersecurity Engineer" industry="Telecommunications" startDate="January 2019" endDate="January 2021"
   tldr="SSO application management with some software development" skills={['Linux', 'JavaScript', 'React', 'Shell Scripting', 'Java']}>
+  * Managed and patched Siteminder and ForgeRock instances and deployed new agents to servers.
   * Created people finder and org chart application using React and Java 8 interfacing with Active Directory.
   * Redesigned Siteminder log in pages to use modern HTML5, CSS, and JavaScript to reflect company rebranding. They were originally written in 2005!
   * Created ingest API endpoint for importing OAuth2 JSON configuration files into ForgeRock OpenAM using Node.js and Express.js
   * Wrote batch script to automate the import and deletion of users from a test AD environment.
-  * Patched Siteminder and ForgeRock instances and deployed new agents to servers.
 </WorkHistoryItem>
 
 <WorkHistoryItem title="Software Development Contractor" industry="Smart Transportation" startDate="September 2018" endDate="December 2018 (Contract Ended)"

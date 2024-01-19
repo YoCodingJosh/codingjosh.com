@@ -32,7 +32,7 @@ export default function Home(): JSX.Element {
             <div className="text--center">
               <Heading as="h2">My Favorite Anime</Heading>
               <p>These are my favorite anime, in no particular order.</p>
-              <small>todo: put details in a hover-over</small>
+              <p>Coming soon: Recent anime watching activity.</p>
             </div>
           </div>
         </section>

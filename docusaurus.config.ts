@@ -17,8 +17,8 @@ const developmentAnnouncementBar = {
 
 const constructionAnnouncementBar = {
   id: "construction",
-  content: "🚧👷‍♂️ This site is still under construction! 🏗️🚧",
-  backgroundColor: "#fafbfc",
+  content: "🚧👷‍♂️🏗️ This site is still under construction. Just applying the finishing touches! ✨",
+  backgroundColor: "#eaf584",
   textColor: "#091E42",
   isCloseable: false,
 };

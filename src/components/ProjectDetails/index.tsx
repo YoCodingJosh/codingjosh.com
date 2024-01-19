@@ -31,6 +31,11 @@ interface ProjectDetailsProps {
   comingSoon?: boolean;
 
   /**
+   * Whether the project is under development.
+   */
+  underDevelopment?: boolean;
+
+  /**
    * Whether the project is no longer supported.
    */
   unsupported?: boolean;
@@ -56,6 +61,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
   unsupported,
   customInfoString,
   technologies,
+  underDevelopment,
 }) => {
   return (
     <div className={styles.projectDetails}>
@@ -64,6 +70,11 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
       {comingSoon && (
         <Admonition type="info">
           This project is coming soon.
+        </Admonition>
+      )}
+      {underDevelopment && (
+        <Admonition type="info">
+          This project is still under development. 🏗️👷‍♂️
         </Admonition>
       )}
       {unsupported && (
@@ -85,7 +96,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
         </div>
       )}
       {projectLink && (
-        <a href={projectLink} target="_blank"className={clsx(styles.link, styles.projectLink)}>
+        <a href={projectLink} target="_blank" className={clsx(styles.link, styles.projectLink)}>
           Visit Project
         </a>
       )}
