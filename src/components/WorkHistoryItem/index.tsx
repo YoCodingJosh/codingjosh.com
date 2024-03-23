@@ -1,5 +1,6 @@
 import React, { PropsWithChildren, useState } from 'react';
-import clsx from 'clsx';
+import { differenceInMonths, parse } from 'date-fns';
+
 import styles from './styles.module.css';
 
 interface WorkHistoryItemProps {
@@ -44,7 +45,7 @@ interface WorkHistoryItemProps {
 
   /**
    * If the job was a contract job.
-   * 
+   *
    * Really just displays (Contract) after the job title and contract ended after the end date.
    */
   wasContract?: boolean;
@@ -53,9 +54,9 @@ interface WorkHistoryItemProps {
 const WorkHistoryItem: React.FC<PropsWithChildren<WorkHistoryItemProps>> = (props) => {
   const [showDetails, setShowDetails] = useState(false);
 
-  const startDate = new Date(props.startDate);
-  const endDate = props.endDate ? new Date(props.endDate) : new Date();
-  const totalMonths = (endDate.getFullYear() - startDate.getFullYear()) * 12 + (endDate.getMonth() - startDate.getMonth());
+  const startDate = parse(props.startDate, 'MMMM yyyy', new Date());
+  const endDate = props.endDate ? parse(props.endDate, 'MMMM yyyy', new Date()) : new Date();
+  const totalMonths = differenceInMonths(endDate, startDate);
   const years = Math.floor(totalMonths / 12);
   const months = Math.ceil(totalMonths % 12);
 
@@ -71,7 +72,7 @@ const WorkHistoryItem: React.FC<PropsWithChildren<WorkHistoryItemProps>> = (prop
       </div>}
       <p>
         <span>
-          {props.startDate} &mdash; {`${props.endDate || 'Present'} ${(props.endDate && props.wasContract) ? ' (Contract Ended) ' : ''}`} 
+          {props.startDate} &mdash; {`${props.endDate || 'Present'} ${(props.endDate && props.wasContract) ? ' (Contract Ended) ' : ''}`}
         </span>
         <span>
           { `(${dateString})` }
