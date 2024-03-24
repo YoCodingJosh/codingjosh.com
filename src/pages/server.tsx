@@ -18,7 +18,9 @@ function PageHeader() {
 
 export default function Server(): JSX.Element {
   useEffect(() => {
-    fetch('/api/info')
+    fetch('/api/info', {
+      method: 'POST',
+    })
       .then((response) => response.json())
       .then((data) => console.log(data));
   }, []);
