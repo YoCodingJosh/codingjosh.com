@@ -2,7 +2,9 @@ interface Env {
 }
 
 export const onRequestGet: PagesFunction<Env> = async (context) => {
-  return new Response(JSON.stringify(context.request), {
+  const cf = context.request.cf;
+
+  return new Response(JSON.stringify(cf), {
     status: 200,
     headers: {
       'Content-Type': 'application/json',
