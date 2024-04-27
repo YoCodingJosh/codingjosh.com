@@ -30,9 +30,5 @@ export default defineEventHandler(async (event) => {
   };
 
   // return the data center the request was routed to
-  return new Response(JSON.stringify(response), {
-    headers: {
-      'content-type': 'text/json',
-    },
-  });
+  return Response.json(response);
 })
