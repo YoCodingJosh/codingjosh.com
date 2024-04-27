@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-const { data: colo } = await useFetch<string>('/api/colo-info');
+const { data: colo } = await useFetch<ColoInfoResponse>('/api/colo-info');
 
-const isKansasCity = computed(() => colo.value === 'MCI');
+const isKansasCity = computed(() => colo.value?.colo === 'MCI');
 
 </script>
 
@@ -11,7 +11,7 @@ const isKansasCity = computed(() => colo.value === 'MCI');
       <p>Copyright &copy; {{ new Date().getFullYear() }} CodingJosh</p>
       <p class="text-sm font-light text-gray-400">
         <span v-if="isKansasCity">Made in and served fresh from Kansas City</span>
-        <span v-else>Made in Kansas City, served fresh from {{ colo }}</span>
+        <span v-else>Made in Kansas City, served fresh from {{ colo?.city }}</span>
       </p>
     </div>
     <a href="https://github.com/YoCodingJosh" class="text-blue-500 hover:text-blue-300" target="_blank">
