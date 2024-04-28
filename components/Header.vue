@@ -55,6 +55,9 @@
           <a href="#" class="hover:text-foreground">
             Settings
           </a>
+          <NuxtLink to="/contact" class="text-muted-foreground hover:text-foreground" active-class="text-foreground">
+            Contact
+          </NuxtLink>
         </nav>
       </SheetContent>
     </Sheet>
