@@ -5,6 +5,7 @@ import Footer from '@/components/Footer.vue'
 
 <template>
   <div class="flex min-h-screen w-full flex-col">
+    <NuxtLoadingIndicator />
     <Header />
     <main class="flex-grow gap-4 bg-muted/40 p-4 md:gap-8 md:p-10">
       <NuxtPage />

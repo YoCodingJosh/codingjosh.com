@@ -6,12 +6,20 @@ export default defineNuxtConfig({
     preset: "cloudflare-pages",
   },
 
-  modules: ["nitro-cloudflare-dev", "@nuxtjs/tailwindcss", "shadcn-nuxt", '@nuxtjs/color-mode'],
+  modules: [
+    "nitro-cloudflare-dev",
+    "@nuxtjs/tailwindcss",
+    "shadcn-nuxt",
+    '@nuxtjs/color-mode',
+    "@nuxt/image",
+    "@vueuse/nuxt",
+    "nuxt-security"
+  ],
 
   app: {
     head: {
       titleTemplate: "%s - CodingJosh",
-    }
+    },
   },
 
   colorMode: {
@@ -30,5 +38,15 @@ export default defineNuxtConfig({
       turnstileSiteKey: '', // NUXT_PUBLIC_TURNSTILE_SITE_KEY
     },
     turnstileSecretKey: '', // NUXT_TURNSTILE_SECRET_KEY
+  },
+
+  experimental: {
+    componentIslands: true,
+  },
+
+  security: {
+    headers: {
+      crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',
+    },
   },
 })

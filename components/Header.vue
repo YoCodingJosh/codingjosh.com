@@ -2,13 +2,14 @@
   <header class="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
     <nav
       class="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
-      <a href="#" class="flex items-center gap-2 text-lg font-semibold md:text-base pr-4">
+      <NuxtLink to="/" class="flex items-center gap-2 text-lg font-semibold md:text-base pr-4">
         <img src="assets/images/hidamari_sketch_yuno_by_graphicsmith_d4bxvho-pre-resized.png" class="h-8 w-8" />
         <h3 class="text-lg font-semibold">CodingJosh</h3>
-      </a>
-      <a href="#" class="text-muted-foreground transition-colors hover:text-foreground">
-        Dashboard
-      </a>
+      </NuxtLink>
+      <NuxtLink to="/" class="text-muted-foreground transition-colors hover:text-foreground"
+        active-class="text-foreground">
+        Home
+      </NuxtLink>
       <a href="#" class="text-muted-foreground transition-colors hover:text-foreground">
         Orders
       </a>
@@ -21,6 +22,10 @@
       <a href="#" class="text-foreground transition-colors hover:text-foreground">
         Settings
       </a>
+      <NuxtLink to="/contact" class="text-muted-foreground transition-colors hover:text-foreground"
+        active-class="text-foreground">
+        Contact
+      </NuxtLink>
     </nav>
     <Sheet>
       <SheetTrigger as-child>
@@ -31,13 +36,13 @@
       </SheetTrigger>
       <SheetContent side="left">
         <nav class="grid gap-6 text-lg font-medium">
-          <a href="#" class="flex items-center gap-2 text-lg font-semibold">
+          <NuxtLink to="/" class="flex items-center gap-2 text-lg font-semibold">
             <img src="assets/images/hidamari_sketch_yuno_by_graphicsmith_d4bxvho-pre-resized.png" class="h-8 w-8" />
             <h3 class="text-md font-semibold">CodingJosh</h3>
-          </a>
-          <a href="#" class="text-muted-foreground hover:text-foreground">
-            Dashboard
-          </a>
+          </NuxtLink>
+          <NuxtLink to="/" class="text-muted-foreground hover:text-foreground" active-class="text-foreground">
+            Home
+          </NuxtLink>
           <a href="#" class="text-muted-foreground hover:text-foreground">
             Orders
           </a>
@@ -76,8 +81,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 const colorMode = useColorMode();
 
 function toggleColorMode() {
-  colorMode.value = colorMode.value === 'light' ? 'dark' : 'light';
-  // TODO: Save the color mode preference to local storage
+  colorMode.preference = colorMode.preference === 'light' ? 'dark' : 'light';
 }
 </script>
 

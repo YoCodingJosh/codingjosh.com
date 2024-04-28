@@ -9,7 +9,10 @@
     "preview": "npm run build && wrangler pages dev",
     "postinstall": "nuxt prepare",
     "deploy": "npm run build && wrangler pages deploy",
-    "cf-typegen": "wrangler types"
+    "cf-typegen": "wrangler types",
+    "db:generate": "drizzle-kit generate:sqlite --schema=src/schema.ts",
+    "db:up": "drizzle-kit up:sqlite --schema=src/schema.ts",
+    "db:studio": "drizzle-kit studio --schema=src/schema.ts"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.13",
@@ -17,8 +20,10 @@
     "@vueuse/core": "^10.9.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "drizzle-orm": "^0.30.9",
     "lucide-vue-next": "^0.376.0",
     "nuxt": "^3.11.2",
+    "nuxt-security": "^1.4.2",
     "open-props": "^1.7.4",
     "radix-vue": "^1.7.2",
     "shadcn-nuxt": "^0.10.4",
@@ -32,8 +37,11 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240423.0",
+    "@nuxt/image": "^1.6.0",
     "@nuxtjs/color-mode": "^3.4.1",
     "@nuxtjs/tailwindcss": "^6.12.0",
+    "@vueuse/nuxt": "^10.9.0",
+    "drizzle-kit": "^0.20.17",
     "nitro-cloudflare-dev": "^0.1.4",
     "wrangler": "^3.52.0"
   }
