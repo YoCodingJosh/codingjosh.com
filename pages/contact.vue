@@ -1,16 +1,24 @@
 <script lang="ts" setup>
 import Spinner from '@/components/Spinner.vue';
+import VueTurnstile from 'vue-turnstile';
 
-const { data: contactStatus } = await useFetch<ContactPageStatusResponse>('/api/contact');
-const contactStatusData = contactStatus.value;
+const config = useRuntimeConfig();
 
+const { data: contactStatus } = await useFetch<ContactPageStatus>('/api/contact');
+
+const turnstileToken = ref<string>('');
 </script>
 
 <template>
   <div>
-    <h2 class="text-2xl font-semibold">Contact</h2>
-
-    <p>{{ contactStatusData }}</p>
+    <span v-if="!contactStatus?.available">
+      <h1 class="text-4xl font-semibold">{{ contactStatus?.message }}</h1>
+    </span>
+    <span v-else>
+      <h2 class="text-2xl font-semibold">Contact</h2>
+      <Spinner />
+      <vue-turnstile :site-key="config.public.turnstileSiteKey" v-model="turnstileToken" theme="dark" />
+    </span>
   </div>
 </template>
 

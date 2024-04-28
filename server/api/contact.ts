@@ -1,24 +1,22 @@
 export default defineEventHandler(async (event) => {
   const kv = event.context.cloudflare.env.KV;
 
-  const status = await kv.get<ContactPageStatusKV | undefined>('contactStatus', 'json');
+  const status = await kv.get<ContactPageStatus | undefined>('contactStatus', 'json');
 
-  // hmmm.. this shouldn't happen, but we'll just assume the contact page is unavailable
-  if (!status) {
-    return new Response('Contact form is currently unavailable.', { status: 503 });
-  }
-
-  if (!status.available) {
-    const response: ContactPageStatusResponse = {
-      message: status.message || 'Contact page is currently unavailable.',
+  if (!status || !status.available) {
+    const response: ContactPageStatus = {
+      message: status?.message || 'Contact page is currently unavailable.',
+      available: false,
     };
 
-    return new Response(JSON.stringify(response), { status: 503 });
+    // can't return a 503 here, as the page is technically available and Nuxt will not capture the response
+    return Response.json(response);
   }
 
-  const response: ContactPageStatusResponse = {
+  const response: ContactPageStatus = {
     message: status.message || 'Contact page is available.',
+    available: true,
   };
 
-  return new Response(JSON.stringify(response), { status: 200 });
+  return Response.json(response, { status: 200 });
 })

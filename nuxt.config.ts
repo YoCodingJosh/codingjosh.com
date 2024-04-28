@@ -23,5 +23,12 @@ export default defineNuxtConfig({
     //   prerender: true,
     // },
     '/api/**': { cors: true },
-  }
+  },
+
+  runtimeConfig: {
+    public: {
+      turnstileSiteKey: '', // NUXT_PUBLIC_TURNSTILE_SITE_KEY
+    },
+    turnstileSecretKey: '', // NUXT_TURNSTILE_SECRET_KEY
+  },
 })

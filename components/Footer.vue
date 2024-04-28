@@ -8,9 +8,9 @@ const isKansasCity = computed(() => colo.value?.colo === 'MCI');
 <template>
   <footer class="bg-gray-800 text-white p-4 flex justify-between items-center">
     <div class="flex flex-col">
-      <p>Copyright &copy; {{ new Date().getFullYear() }} CodingJosh</p>
+      <p>Copyright &copy; {{ new Date().getFullYear() }} Josh Kennedy</p>
       <p class="text-sm font-light text-gray-400">
-        <span v-if="isKansasCity">Made in and served fresh from Kansas City</span>
+        <span v-if="isKansasCity" title="Howdy neighbor!">Made in and served fresh from Kansas City</span>
         <span v-else>Made in Kansas City, served fresh from {{ colo?.city }}</span>
       </p>
     </div>
