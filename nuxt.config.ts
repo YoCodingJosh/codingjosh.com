@@ -45,6 +45,8 @@ export default defineNuxtConfig({
   },
 
   security: {
+    csrf: true,
+    sri: false, // breaks cloudflare pages
     headers: {
       crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',
     },
