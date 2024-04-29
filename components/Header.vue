@@ -3,9 +3,7 @@
     <nav
       class="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
       <NuxtLink to="/" class="flex items-center gap-2 text-lg font-semibold md:text-base pr-4">
-        <ClientOnly>
-          <img src="assets/images/hidamari_sketch_yuno_by_graphicsmith_d4bxvho-pre-resized.png" class="h-8 w-8" />
-        </ClientOnly>
+        <img src="assets/images/hidamari_sketch_yuno_by_graphicsmith_d4bxvho-pre-resized.png" class="h-8 w-8" />
         <h3 class="text-lg font-semibold">CodingJosh</h3>
       </NuxtLink>
       <NuxtLink to="/" class="text-muted-foreground transition-colors hover:text-foreground"
@@ -21,7 +19,7 @@
         Contact
       </NuxtLink>
     </nav>
-    <Sheet>
+    <Sheet class="md:hidden">
       <SheetTrigger as-child>
         <Button variant="outline" size="icon" class="shrink-0 md:hidden">
           <Menu class="h-5 w-5" />
@@ -32,9 +30,7 @@
         <nav class="grid gap-6 text-lg font-medium">
           <SheetClose as-child>
             <NuxtLink to="/" class="flex items-center gap-2 text-lg font-semibold">
-              <ClientOnly>
-                <img src="assets/images/hidamari_sketch_yuno_by_graphicsmith_d4bxvho-pre-resized.png" class="h-8 w-8" />
-              </ClientOnly>
+              <img src="assets/images/hidamari_sketch_yuno_by_graphicsmith_d4bxvho-pre-resized.png" class="h-8 w-8" />
               <h3 class="text-md font-semibold">CodingJosh</h3>
             </NuxtLink>
           </SheetClose>
@@ -61,9 +57,7 @@
       </SheetContent>
     </Sheet>
     <a href="#" class="flex items-center gap-2 text-lg font-semibold md:text-base pr-8 md:hidden">
-      <ClientOnly>
-        <img src="assets/images/hidamari_sketch_yuno_by_graphicsmith_d4bxvho-pre-resized.png" class="h-8 w-8" />
-      </ClientOnly>
+      <img src="assets/images/hidamari_sketch_yuno_by_graphicsmith_d4bxvho-pre-resized.png" class="h-8 w-8" />
       <h3 class="text-lg font-semibold">CodingJosh</h3>
     </a>
     <Button variant="outline" size="icon" class="shrink-0 ml-auto" @click="toggleColorMode">
