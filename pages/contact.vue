@@ -6,11 +6,14 @@ const config = useRuntimeConfig();
 
 const { data: contactStatus } = await useFetch<ContactPageStatus>('/api/contact');
 
-const turnstileToken = ref<string>('');
+const turnstileToken = useState<string>('turnstileToken', () => '');
 </script>
 
 <template>
   <div>
+    <Head>
+      <Title>Contact</Title>
+    </Head>
     <span v-if="!contactStatus?.available">
       <h1 class="text-4xl font-semibold">{{ contactStatus?.message }}</h1>
     </span>
@@ -21,7 +24,3 @@ const turnstileToken = ref<string>('');
     </span>
   </div>
 </template>
-
-<style>
-
-</style>

@@ -1,5 +1,8 @@
 <template>
   <div>
+    <Head>
+      <Title>About</Title>
+    </Head>
     <p>About me!</p>
   </div>
 </template>

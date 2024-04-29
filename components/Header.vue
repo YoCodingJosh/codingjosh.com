@@ -3,27 +3,21 @@
     <nav
       class="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
       <NuxtLink to="/" class="flex items-center gap-2 text-lg font-semibold md:text-base pr-4">
-        <img src="assets/images/hidamari_sketch_yuno_by_graphicsmith_d4bxvho-pre-resized.png" class="h-8 w-8" />
+        <ClientOnly>
+          <img src="assets/images/hidamari_sketch_yuno_by_graphicsmith_d4bxvho-pre-resized.png" class="h-8 w-8" />
+        </ClientOnly>
         <h3 class="text-lg font-semibold">CodingJosh</h3>
       </NuxtLink>
       <NuxtLink to="/" class="text-muted-foreground transition-colors hover:text-foreground"
-        active-class="text-foreground">
+        active-class="text-purple-500">
         Home
       </NuxtLink>
-      <a href="#" class="text-muted-foreground transition-colors hover:text-foreground">
-        Orders
-      </a>
-      <a href="#" class="text-muted-foreground transition-colors hover:text-foreground">
-        Products
-      </a>
-      <a href="#" class="text-muted-foreground transition-colors hover:text-foreground">
-        Customers
-      </a>
-      <a href="#" class="text-foreground transition-colors hover:text-foreground">
-        Settings
-      </a>
+      <NuxtLink to="/about" class="text-muted-foreground transition-colors hover:text-foreground"
+        active-class="text-purple-500">
+        About
+      </NuxtLink>
       <NuxtLink to="/contact" class="text-muted-foreground transition-colors hover:text-foreground"
-        active-class="text-foreground">
+        active-class="text-purple-500">
         Contact
       </NuxtLink>
     </nav>
@@ -36,33 +30,40 @@
       </SheetTrigger>
       <SheetContent side="left">
         <nav class="grid gap-6 text-lg font-medium">
-          <NuxtLink to="/" class="flex items-center gap-2 text-lg font-semibold">
-            <img src="assets/images/hidamari_sketch_yuno_by_graphicsmith_d4bxvho-pre-resized.png" class="h-8 w-8" />
-            <h3 class="text-md font-semibold">CodingJosh</h3>
-          </NuxtLink>
-          <NuxtLink to="/" class="text-muted-foreground hover:text-foreground" active-class="text-foreground">
-            Home
-          </NuxtLink>
-          <a href="#" class="text-muted-foreground hover:text-foreground">
-            Orders
-          </a>
-          <a href="#" class="text-muted-foreground hover:text-foreground">
-            Products
-          </a>
-          <a href="#" class="text-muted-foreground hover:text-foreground">
-            Customers
-          </a>
-          <a href="#" class="hover:text-foreground">
-            Settings
-          </a>
-          <NuxtLink to="/contact" class="text-muted-foreground hover:text-foreground" active-class="text-foreground">
-            Contact
-          </NuxtLink>
+          <SheetClose as-child>
+            <NuxtLink to="/" class="flex items-center gap-2 text-lg font-semibold">
+              <ClientOnly>
+                <img src="assets/images/hidamari_sketch_yuno_by_graphicsmith_d4bxvho-pre-resized.png" class="h-8 w-8" />
+              </ClientOnly>
+              <h3 class="text-md font-semibold">CodingJosh</h3>
+            </NuxtLink>
+          </SheetClose>
+          <SheetClose as-child>
+            <NuxtLink to="/" class="hover:text-foreground" active-class="text-purple-500">
+              Home
+            </NuxtLink>
+          </SheetClose>
+          <SheetClose as-child>
+            <NuxtLink to="/about" class="text-muted-foreground hover:text-foreground" active-class="text-purple-500">
+              About
+            </NuxtLink>
+          </SheetClose>
+          <SheetClose as-child>
+            <NuxtLink to="/contact" class="text-muted-foreground hover:text-foreground" active-class="text-purple-500">
+              Contact
+            </NuxtLink>
+          </SheetClose>
+          <!-- TODO: put footer links here as well -->
         </nav>
+        <p class="text-muted-foreground text-sm font-light mt-4">
+          &copy; {{ new Date().getFullYear() }} Josh Kennedy
+        </p>
       </SheetContent>
     </Sheet>
     <a href="#" class="flex items-center gap-2 text-lg font-semibold md:text-base pr-8 md:hidden">
-      <img src="assets/images/hidamari_sketch_yuno_by_graphicsmith_d4bxvho-pre-resized.png" class="h-8 w-8" />
+      <ClientOnly>
+        <img src="assets/images/hidamari_sketch_yuno_by_graphicsmith_d4bxvho-pre-resized.png" class="h-8 w-8" />
+      </ClientOnly>
       <h3 class="text-lg font-semibold">CodingJosh</h3>
     </a>
     <Button variant="outline" size="icon" class="shrink-0 ml-auto" @click="toggleColorMode">
@@ -74,11 +75,9 @@
 </template>
 
 <script lang="ts" setup>
-import { CircleUser, Menu, Package2, Search, Moon, Sun } from 'lucide-vue-next'
+import { Menu, Moon, Sun } from 'lucide-vue-next'
 
 import { Button } from '@/components/ui/button'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
-import { Input } from '@/components/ui/input'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 
 const colorMode = useColorMode();
