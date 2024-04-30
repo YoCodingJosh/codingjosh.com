@@ -8,8 +8,8 @@ pages_build_output_dir = "./dist"
 # - https://developers.cloudflare.com/pages/functions/bindings/#environment-variables
 # Note: Use secrets to store sensitive data.
 # - https://developers.cloudflare.com/pages/functions/bindings/#secrets
-# [vars]
-# MY_VARIABLE = "production_value"
+[vars]
+NUXT_PUBLIC_TURNSTILE_SITE_KEY = "0x4AAAAAAAOy57qtbm5qluJY"
 
 # Bind the Workers AI model catalog. Run machine learning models, powered by serverless GPUs, on Cloudflare’s global network
 # Docs: https://developers.cloudflare.com/pages/functions/bindings/#workers-ai
@@ -70,8 +70,8 @@ id = "e59a4950bd764ebaa9a0bc909a45aae4"
 
 ######## PRODUCTION environment config ########
 
-[env.production.vars]
-NUXT_PUBLIC_TURNSTILE_SITE_KEY = "0x4AAAAAAAOy57qtbm5qluJY"
+# [env.production.vars]
+# NUXT_PUBLIC_TURNSTILE_SITE_KEY = "0x4AAAAAAAOy57qtbm5qluJY"
 
 # [[env.production.kv_namespaces]]
 # binding = "MY_KV_NAMESPACE"
