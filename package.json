@@ -23,17 +23,17 @@
     "drizzle-orm": "^0.30.9",
     "lucide-vue-next": "^0.376.0",
     "nuxt": "^3.11.2",
-    "nuxt-security": "^1.4.2",
+    "nuxt-security": "^1.4.3",
     "open-props": "^1.7.4",
-    "radix-vue": "^1.7.2",
+    "radix-vue": "^1.7.3",
     "shadcn-nuxt": "^0.10.4",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
     "vee-validate": "^4.12.6",
-    "vue": "^3.4.25",
+    "vue": "^3.4.26",
     "vue-router": "^4.3.0",
     "vue-turnstile": "^1.0.8",
-    "zod": "^3.23.4"
+    "zod": "^3.23.5"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240423.0",

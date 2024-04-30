@@ -70,8 +70,8 @@ id = "e59a4950bd764ebaa9a0bc909a45aae4"
 
 ######## PRODUCTION environment config ########
 
-# [env.production.vars]
-# API_KEY = "abc123"
+[env.production.vars]
+NUXT_PUBLIC_TURNSTILE_SITE_KEY = "0x4AAAAAAAOy57qtbm5qluJY"
 
 # [[env.production.kv_namespaces]]
 # binding = "MY_KV_NAMESPACE"

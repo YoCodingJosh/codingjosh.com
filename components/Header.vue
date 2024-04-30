@@ -19,14 +19,14 @@
         Contact
       </NuxtLink>
     </nav>
-    <Sheet class="md:hidden">
+    <Sheet>
       <SheetTrigger as-child>
         <Button variant="outline" size="icon" class="shrink-0 md:hidden">
           <Menu class="h-5 w-5" />
           <span class="sr-only">Toggle navigation menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="left">
+      <SheetContent side="left" class="md:hidden">
         <nav class="grid gap-6 text-lg font-medium">
           <SheetClose as-child>
             <NuxtLink to="/" class="flex items-center gap-2 text-lg font-semibold">
@@ -56,11 +56,11 @@
         </p>
       </SheetContent>
     </Sheet>
-    <a href="#" class="flex items-center gap-2 text-lg font-semibold md:text-base pr-8 md:hidden">
+    <NuxtLink to="/" class="flex items-center gap-2 text-lg font-semibold md:text-base md:hidden ml-auto mr-auto">
       <img src="assets/images/hidamari_sketch_yuno_by_graphicsmith_d4bxvho-pre-resized.png" class="h-8 w-8" />
       <h3 class="text-lg font-semibold">CodingJosh</h3>
-    </a>
-    <Button variant="outline" size="icon" class="shrink-0 ml-auto" @click="toggleColorMode">
+    </NuxtLink>
+    <Button variant="outline" size="icon" class="shrink-0 md:ml-auto" @click="toggleColorMode">
       <Sun v-if="colorMode.value === 'light'" class="h-5 w-5" />
       <Moon v-else class="h-5 w-5" />
       <span class="sr-only">Toggle color mode</span>
