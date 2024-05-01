@@ -51,9 +51,14 @@
           </SheetClose>
           <!-- TODO: put footer links here as well -->
         </nav>
-        <p class="text-muted-foreground text-sm font-light mt-4">
-          &copy; {{ new Date().getFullYear() }} Josh Kennedy
-        </p>
+        <SheetFooter>
+          <p class="text-muted-foreground text-sm font-light mt-4">
+            &copy; {{ new Date().getFullYear() }} Josh Kennedy
+          </p>
+        </SheetFooter>
+        <SheetClose class="hidden">
+          <button ref="hiddenCloseForResponsiveRotateRef"></button>
+        </SheetClose>
       </SheetContent>
     </Sheet>
     <NuxtLink to="/" class="flex items-center gap-2 text-lg font-semibold md:text-base md:hidden ml-auto mr-auto">
@@ -79,6 +84,26 @@ const colorMode = useColorMode();
 function toggleColorMode() {
   colorMode.preference = colorMode.preference === 'light' ? 'dark' : 'light';
 }
+
+// this is a hack to close the responsive menu when the window is resized to a larger size
+
+let resizeHandler: () => void;
+
+const hiddenCloseForResponsiveRotateRef = ref<HTMLElement | null>(null);
+
+onMounted(() => {
+  resizeHandler = () => {
+    if (window.matchMedia("(min-width: 768px)").matches) {
+      hiddenCloseForResponsiveRotateRef.value?.click();
+    }
+  };
+
+  window.addEventListener('resize', resizeHandler);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', resizeHandler);
+});
 </script>
 
 <style></style>
