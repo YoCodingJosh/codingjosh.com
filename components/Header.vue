@@ -6,17 +6,9 @@
         <img src="assets/images/hidamari_sketch_yuno_by_graphicsmith_d4bxvho-pre-resized.png" class="h-8 w-8" />
         <h3 class="text-lg font-semibold">CodingJosh</h3>
       </NuxtLink>
-      <NuxtLink to="/" class="text-muted-foreground transition-colors hover:text-foreground"
-        active-class="text-purple-500">
-        Home
-      </NuxtLink>
-      <NuxtLink to="/about" class="text-muted-foreground transition-colors hover:text-foreground"
-        active-class="text-purple-500">
-        About
-      </NuxtLink>
-      <NuxtLink to="/contact" class="text-muted-foreground transition-colors hover:text-foreground"
-        active-class="text-purple-500">
-        Contact
+      <NuxtLink v-for="link in links" :key="link.text" :to="link.to"
+        class="text-muted-foreground transition-colors hover:text-foreground" active-class="text-purple-500">
+        {{ link.text }}
       </NuxtLink>
     </nav>
     <Sheet>
@@ -34,19 +26,10 @@
               <h3 class="text-md font-semibold">CodingJosh</h3>
             </NuxtLink>
           </SheetClose>
-          <SheetClose as-child>
-            <NuxtLink to="/" class="hover:text-foreground" active-class="text-purple-500">
-              Home
-            </NuxtLink>
-          </SheetClose>
-          <SheetClose as-child>
-            <NuxtLink to="/about" class="text-muted-foreground hover:text-foreground" active-class="text-purple-500">
-              About
-            </NuxtLink>
-          </SheetClose>
-          <SheetClose as-child>
-            <NuxtLink to="/contact" class="text-muted-foreground hover:text-foreground" active-class="text-purple-500">
-              Contact
+          <SheetClose as-child v-for="link in links" :key="'responsive-' + link.text">
+            <NuxtLink :to="link.to" class="text-muted-foreground transition-colors hover:text-foreground"
+              active-class="text-purple-500">
+              {{ link.text }}
             </NuxtLink>
           </SheetClose>
           <!-- TODO: put footer links here as well -->
@@ -85,7 +68,14 @@ function toggleColorMode() {
   colorMode.preference = colorMode.preference === 'light' ? 'dark' : 'light';
 }
 
-// this is a hack to close the responsive menu when the window is resized to a larger size
+const links = [
+  { to: '/', text: 'Home' },
+  { to: '/projects', text: 'Projects' },
+  { to: '/about', text: 'About' },
+  { to: '/contact', text: 'Contact' },
+];
+
+// this is a hack to close the responsive menu when the window is resized to a larger size (ie rotating a phone)
 
 let resizeHandler: () => void;
 

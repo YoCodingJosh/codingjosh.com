@@ -1,5 +1,8 @@
 <script lang="ts" setup>
-const { data: colo } = await useFetch<ColoInfoResponse>('/api/colo-info');
+const { data: colo } = await useFetch<ColoInfoResponse>('/api/colo-info', {
+  // lazy: true,
+  // server: false,
+});
 
 const isKansasCity = computed(() => colo.value?.colo === 'MCI');
 </script>
