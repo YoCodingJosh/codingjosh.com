@@ -19,4 +19,4 @@ export default defineEventHandler(async (event) => {
   };
 
   return Response.json(response, { status: 200 });
-})
+});

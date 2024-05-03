@@ -49,6 +49,9 @@ export default defineNuxtConfig({
     sri: false, // sri breaks cloudflare pages (bad hash)
     headers: {
       crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',
+      contentSecurityPolicy: {
+        "img-src": ["'self'", "data:", "https://cdn.myanimelist.net", "https://s4.anilist.co/", "https://anilist.co/"],
+      },
     },
   },
 })

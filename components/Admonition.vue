@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, defineProps } from 'vue';
+import { computed } from 'vue';
 import { Info, CheckCircle, AlertCircle, XCircle } from 'lucide-vue-next';
 
 type AdminitionType = 'info' | 'success' | 'warning' | 'error';
