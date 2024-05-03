@@ -52,6 +52,7 @@ export default defineNuxtConfig({
       contentSecurityPolicy: {
         "img-src": ["'self'", "data:", "https://cdn.myanimelist.net", "https://s4.anilist.co/", "https://anilist.co/"],
       },
+      crossOriginResourcePolicy: "cross-origin",
     },
   },
 })
