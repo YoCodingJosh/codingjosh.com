@@ -7,8 +7,29 @@
         <h3 class="text-lg font-semibold">CodingJosh</h3>
       </NuxtLink>
       <NuxtLink v-for="link in links" :key="link.text" :to="link.to"
-        class="text-muted-foreground transition-colors hover:text-foreground" active-class="text-purple-500">
-        {{ link.text }}
+        class="text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
+        exact-active-class="text-purple-500">
+        <span v-if="link.content" class="relative">
+          <DropdownMenu>
+            <DropdownMenuTrigger class="header-dropdown-target" as-child>
+              <span class="flex items-center">
+                {{ link.text }}
+                <ChevronDown class="h-5 w-5" />
+              </span>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem v-for="subLink in link.content" as-child :key="subLink.text">
+                <NuxtLink :to="subLink.to" class="text-muted-foreground transition-colors hover:text-foreground"
+                  active-class="text-purple-500">
+                  {{ subLink.text }}
+                </NuxtLink>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </span>
+        <span v-else>
+          {{ link.text }}
+        </span>
       </NuxtLink>
     </nav>
     <Sheet>
@@ -26,12 +47,29 @@
               <h3 class="text-md font-semibold">CodingJosh</h3>
             </NuxtLink>
           </SheetClose>
-          <SheetClose as-child v-for="link in links" :key="'responsive-' + link.text">
-            <NuxtLink :to="link.to" class="text-muted-foreground transition-colors hover:text-foreground"
-              active-class="text-purple-500">
-              {{ link.text }}
-            </NuxtLink>
-          </SheetClose>
+          <template v-for="link in links" :key="'responsive-' + link.text">
+            <SheetClose as-child v-if="!link.content">
+              <NuxtLink :to="link.to" class="text-muted-foreground transition-colors hover:text-foreground"
+                active-class="text-purple-500">
+                {{ link.text }}
+              </NuxtLink>
+            </SheetClose>
+            <div v-else @click="toggle(link.text)" class="cursor-pointer">
+              <div class="text-muted-foreground flex items-center">{{ link.text }} <ChevronDown class="h-4 w-4 ml-2" /></div>
+              <transition name="fade">
+                <ul v-if="opened === link.text">
+                  <li v-for="subLink in link.content" :key="subLink.text" class="pl-4 mt-3">
+                    <SheetClose as-child>
+                      <NuxtLink :to="subLink.to" class="text-muted-foreground transition-colors hover:text-foreground"
+                        active-class="text-purple-500">
+                        {{ subLink.text }}
+                      </NuxtLink>
+                    </SheetClose>
+                  </li>
+                </ul>
+              </transition>
+            </div>
+          </template>
           <!-- TODO: put footer links here as well -->
         </nav>
         <SheetFooter>
@@ -57,10 +95,17 @@
 </template>
 
 <script lang="ts" setup>
-import { Menu, Moon, Sun } from 'lucide-vue-next'
+import { Menu, Moon, Sun, ChevronDown } from 'lucide-vue-next'
 
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger, DropdownMenuItem } from './ui/dropdown-menu';
+
+let opened = ref<string | null>(null);
+
+function toggle(linkText: string) {
+  opened.value = opened.value === linkText ? null : linkText;
+}
 
 const colorMode = useColorMode();
 
@@ -73,6 +118,14 @@ const links = [
   { to: '/projects', text: 'Projects' },
   { to: '/about', text: 'About' },
   { to: '/contact', text: 'Contact' },
+  {
+    text: 'Hobbies', content: [
+      { to: '/interests/anime', text: 'Anime' },
+      { to: '/interests/games', text: 'Games' },
+      { to: '/interests/music', text: 'Music' },
+    ]
+  },
+  { to: '/blog', text: 'Blog' },
 ];
 
 // this is a hack to close the responsive menu when the window is resized to a larger size (ie rotating a phone)
@@ -96,4 +149,31 @@ onUnmounted(() => {
 });
 </script>
 
-<style></style>
+<style scoped>
+.header-dropdown-target[data-state="open"],
+.header-dropdown-target[data-state="closed"] {
+  display: flex;
+  align-items: center;
+}
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateY(10px);
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
