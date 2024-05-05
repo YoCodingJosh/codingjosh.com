@@ -55,7 +55,7 @@
               </NuxtLink>
             </SheetClose>
             <div v-else @click="toggle(link.text)" class="cursor-pointer">
-              <div class="text-muted-foreground flex items-center">{{ link.text }}
+              <div class="text-muted-foreground flex items-center" :class="{ 'text-purple-500': isLinkActive(link) }">{{ link.text }}
                 <ChevronDown class="h-4 w-4 ml-2" />
               </div>
               <transition name="fade">
