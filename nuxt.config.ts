@@ -13,7 +13,8 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     "@nuxt/image",
     "@vueuse/nuxt",
-    "nuxt-security"
+    "nuxt-security",
+    "@nuxt/content"
   ],
 
   app: {

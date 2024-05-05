@@ -3,10 +3,10 @@
     <Head>
       <Title>About</Title>
     </Head>
-    <p>About me!</p>
+    <ContentRenderer class="prose dark:prose-invert" :value="data" />
   </div>
 </template>
 
 <script lang="ts" setup>
-
+const { data } = await useAsyncData('about', () => queryContent('/about').findOne());
 </script>
