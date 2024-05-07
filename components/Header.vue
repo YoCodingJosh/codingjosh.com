@@ -108,12 +108,18 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger, DropdownMenuIte
 const route = useRoute();
 
 function isLinkActive(link: HeaderLink) {
-  if (link.to && route.path === link.to) {
+  if (link.to === '/') {
+    return route.path === '/';
+  }
+
+  if (link.to && route.path.startsWith(link.to)) {
     return true;
   }
+
   if (link.content) {
-    return link.content.some(subLink => route.path === subLink.to);
+    return link.content.some(subLink => route.path.startsWith(subLink.to ?? ''));
   }
+
   return false;
 }
 

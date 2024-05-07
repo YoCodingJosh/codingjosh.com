@@ -1,0 +1,7 @@
+###############################################################################
+# Set default behavior to automatically normalize line endings.
+###############################################################################
+* text=auto
+
+# Make GitHub detect .md files for language statistics
+*.md linguist-detectable=true

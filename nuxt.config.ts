@@ -52,10 +52,24 @@ export default defineNuxtConfig({
       // crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',
       crossOriginEmbedderPolicy: 'unsafe-none',
       contentSecurityPolicy: {
-        "script-src": [ "'self'", "'unsafe-inline'", "https://static.cloudflareinsights.com/"],
+        "script-src": ["'self'", "'unsafe-inline'", "https://static.cloudflareinsights.com/"],
         "img-src": ["'self'", "data:", "https://cdn.myanimelist.net", "https://s4.anilist.co/", "https://anilist.co/"],
       },
       crossOriginResourcePolicy: "cross-origin",
     },
   },
+
+  content: {
+    highlight: {
+      theme: {
+        default: 'light-plus',
+        dark: 'dark-plus',
+      },
+
+      langs: [
+        'c', 'cpp', 'csharp', 'java', 'typescript', 'ruby', 'php', 'python', 'sql', 'docker', 'erb', 'elixir',
+        'git-commit', 'git-rebase', 'tsx', 'jsx', 'makefile', 'cmake', 'asm'
+      ]
+    }
+  }
 })

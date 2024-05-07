@@ -1,4 +1,6 @@
-# About Me!
+---
+title: About Me!
+---
 
 Hello there! I'm Josh, a software engineer from Kansas City.
 
