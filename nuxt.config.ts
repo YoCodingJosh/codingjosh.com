@@ -67,8 +67,8 @@ export default defineNuxtConfig({
       },
 
       langs: [
-        'c', 'cpp', 'csharp', 'typescript', 'ruby', 'python', 'sql', 'docker', 'erb', 'git-commit', 'git-rebase', "asm",
-        'tsx', 'jsx', 'makefile', 'cmake',
+        'c', 'cpp', 'csharp', 'typescript', 'ruby', 'python', 'sql', 'docker', 'erb', 'git-commit', 'git-rebase',
+        'tsx', 'jsx',
       ]
     }
   }

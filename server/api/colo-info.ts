@@ -3,10 +3,7 @@ import rawData from "../data/airports-code@public.json";
 interface AirportData {
   column_1: string; // IATA code
   city_name: string;
-  country_name: string;
   country_code: string;
-  latitude: number;
-  longitude: number;
 }
 
 const data = rawData as AirportData[];

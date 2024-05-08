@@ -26,7 +26,6 @@ interface AirportData {
 interface FilteredAirportData {
   column_1: string;
   city_name: string;
-  country_name: string;
   country_code: string;
 }
 
@@ -37,10 +36,9 @@ const rawData = fs.readFileSync("./server/data/airports-code@public.json", 'utf8
 const data = JSON.parse(rawData) as AirportData[];
 
 // filter out the data we don't need
-const filteredData: FilteredAirportData[] = data.map(({ column_1, city_name, country_name, country_code }) => ({
+const filteredData: FilteredAirportData[] = data.map(({ column_1, city_name, country_code }) => ({
   column_1,
   city_name,
-  country_name,
   country_code,
 }));
 

@@ -5,7 +5,7 @@ interface ColoInfoResponse {
   colo: string;
 
   /**
-   * The country where the data center is located.
+   * The country code where the data center is located.
    */
   country?: string;
 
