@@ -143,7 +143,6 @@ const links: HeaderLink[] = [
     text: 'Hobbies', content: [
       { to: '/interests/anime', text: 'Anime' },
       { to: '/interests/games', text: 'Games' },
-      { to: '/interests/music', text: 'Music' },
     ]
   },
   // { to: '/blog', text: 'Blog' },
