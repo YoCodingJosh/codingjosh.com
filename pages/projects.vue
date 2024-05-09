@@ -4,14 +4,20 @@
       <Title>Projects</Title>
     </Head>
     <p>Projects!</p>
-    <ProjectCard />
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      <ProjectCard class="project-card" v-for="project in projectData" :key="project.name" v-bind="project" />
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import type { ProjectDetails } from '~/types/ProjectDetails';
 
+const { data: projectData } = await useFetch<ProjectDetails[]>('/api/projects');
 </script>
 
-<style>
-
+<style scoped>
+.project-card {
+  min-height: 200px; /* Adjust this value as needed */
+}
 </style>

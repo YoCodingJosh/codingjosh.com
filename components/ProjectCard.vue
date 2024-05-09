@@ -2,14 +2,11 @@
   <div>
     <Card>
       <CardHeader>
-        <CardTitle>Card Title</CardTitle>
-        <CardDescription>Card Description</CardDescription>
+        <CardTitle>{{ props.name }}</CardTitle>
+        <CardDescription>{{ props.description }}</CardDescription>
       </CardHeader>
-      <CardContent>
-        Card Content
-      </CardContent>
       <CardFooter>
-        Card Footer
+        TODO: project link and github link
       </CardFooter>
     </Card>
   </div>
@@ -18,7 +15,6 @@
 <script setup lang='ts'>
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
@@ -26,4 +22,6 @@ import {
 } from '@/components/ui/card';
 
 import { type ProjectDetails } from '~/types/ProjectDetails';
+
+const props = defineProps<ProjectDetails>();
 </script>
