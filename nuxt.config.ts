@@ -23,6 +23,12 @@ export default defineNuxtConfig({
     },
   },
 
+  tailwindcss: {
+    exposeConfig: true,
+    viewer: true,
+    configPath: 'tailwind.config.ts',
+  },
+
   colorMode: {
     classSuffix: '',
   },
