@@ -1,5 +1,7 @@
 import { type ProjectDetails } from '../../types/ProjectDetails';
 
+// TODO: put this in a database
+
 export const projectsData: ProjectDetails[] = [
   {
     name: "Kablam!",
@@ -20,16 +22,25 @@ export const projectsData: ProjectDetails[] = [
   {
     name: "Anime Stats for MyAnimeList",
     description: "a simple website that displays your anime stats from MyAnimeList",
-    tech: [ "Vue 3", "TypeScript", "Vuetify", "Hono", "Cloudflare Workers", "Cloudflare Pages" ],
+    tech: [ "TypeScript", "Vue 3", "Hono", "Vuetify", "Cloudflare Workers", "Cloudflare Pages" ],
     repo: "https://github.com/YoCodingJosh/anime-stats-frontend",
+    url: "https://anime-stats.codingjosh.com/",
     projectType: "open-source",
     underConstruction: true,
   },
   {
     name: "CodingJosh",
     description: "my personal website (you're on it!)",
-    tech: [ "Nuxt 3", "TypeScript", "Tailwind CSS", "Vue 3", "Cloudflare Pages" ],
+    tech: [ "TypeScript", "Nuxt 3", "Tailwind CSS", "Vue 3", "Cloudflare Pages", "Cloudflare D1" ],
+    projectType: "open-source",
+    repo: "https://github.com/YoCodingJosh/codingjosh.com",
+    url: "https://codingjosh.com/",
+  },
+  {
+    name: "keihatsu (啓発)",
+    description: "a better confluence and jira with AI - still in the early R&D phase",
+    tech: [ "TypeScript", "Next.js", "React", "Tailwind CSS", "Cloudflare Pages", "Cloudflare Workers", "Supabase", "PostgreSQL" ],
     projectType: "closed-source",
-    customInfoString: "Will be open-sourced soon!",
+    underConstruction: true,
   }
 ];
