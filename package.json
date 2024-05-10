@@ -17,7 +17,7 @@
   "dependencies": {
     "@nuxt/content": "^2.12.1",
     "@tailwindcss/typography": "^0.5.13",
-    "@vee-validate/zod": "^4.12.7",
+    "@vee-validate/zod": "^4.12.8",
     "@vueuse/core": "^10.9.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -30,7 +30,7 @@
     "shadcn-nuxt": "^0.10.4",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
-    "vee-validate": "^4.12.7",
+    "vee-validate": "^4.12.8",
     "vue": "^3.4.27",
     "vue-router": "^4.3.2",
     "vue-turnstile": "^1.0.8",
@@ -42,8 +42,8 @@
     "@nuxtjs/color-mode": "^3.4.1",
     "@nuxtjs/tailwindcss": "^6.12.0",
     "@vueuse/nuxt": "^10.9.0",
-    "drizzle-kit": "^0.20.18",
+    "drizzle-kit": "^0.21.0",
     "nitro-cloudflare-dev": "^0.1.4",
-    "wrangler": "^3.53.1"
+    "wrangler": "^3.55.0"
   }
 }
