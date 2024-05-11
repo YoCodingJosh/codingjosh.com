@@ -20,6 +20,14 @@ export const projectsData: ProjectDetails[] = [
     unsupported: true,
   },
   {
+    name: "Brick Blaster!",
+    description: 'basic breakout clone',
+    tech: [ 'Vue 3', 'TypeScript', 'HTML5 Canvas', 'Pinia' ],
+    projectType: 'open-source',
+    repo: 'https://github.com/YoCodingJosh/brick-blaster',
+    url: 'https://brick-blaster.codingjosh.com/',
+  },
+  {
     name: "Anime Stats for MyAnimeList",
     description: "a simple website that displays your anime stats from MyAnimeList",
     tech: [ "TypeScript", "Vue 3", "Hono", "Vuetify", "Cloudflare Workers", "Cloudflare Pages" ],
