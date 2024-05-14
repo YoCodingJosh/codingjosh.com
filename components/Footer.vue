@@ -1,10 +1,7 @@
 <script lang="ts" setup>
-const { data: colo } = await useFetch<ColoInfoResponse>('/api/colo-info', {
-  // lazy: true,
-  // server: false,
-});
+import { useLocationStore } from '@/stores/location';
 
-const isKansasCity = computed(() => colo.value?.colo === 'MCI');
+const locationStore = useLocationStore();
 </script>
 
 <template>
@@ -12,8 +9,7 @@ const isKansasCity = computed(() => colo.value?.colo === 'MCI');
     <div class="flex flex-col">
       <p>Copyright &copy; {{ new Date().getFullYear() }} Josh Kennedy</p>
       <p class="text-sm font-light text-gray-400">
-        <span v-if="isKansasCity" title="Howdy neighbor!">Made in and served fresh from Kansas City</span>
-        <span v-else>Made in Kansas City, served fresh from {{ colo?.city }}</span>
+        <span :title="locationStore.isKansasCity ? 'Howdy neighbor!' : ''">{{locationStore.footerString}}</span>
       </p>
     </div>
     <a href="https://github.com/YoCodingJosh" class="text-blue-500 hover:text-blue-300" target="_blank">

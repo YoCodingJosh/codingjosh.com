@@ -1,10 +1,12 @@
-# Nuxt 3 Minimal Starter
+# CodingJosh.com
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 Initialize KV using something like this: `npx wrangler kv:key put --local --namespace-id=e59a4950bd764ebaa9a0bc909a45aae4 contactStatus '{ "available": false, "message": "Contact form is currently under construction." }'`
 
 Download latest airport data for colo-info api here: https://data.opendatasoft.com/explore/dataset/airports-code%40public/table/
+
+For CMS login, set `NUXT_AUTH_GITHUB_USER_ID` in .env to your account's GitHub account, get it here: https://api.github.com/users/your_github_user_name
 
 ## Setup
 

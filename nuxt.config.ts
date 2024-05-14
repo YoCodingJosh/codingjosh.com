@@ -14,7 +14,9 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@vueuse/nuxt",
     "nuxt-security",
-    "@nuxt/content"
+    "@nuxt/content",
+    "nuxt-auth-utils",
+    '@pinia/nuxt',
   ],
 
   app: {
@@ -77,5 +79,5 @@ export default defineNuxtConfig({
         'tsx', 'jsx',
       ]
     }
-  }
+  },
 })
