@@ -1,12 +1,19 @@
 <script lang="ts" setup>
 import Spinner from '@/components/Spinner.vue';
-import VueTurnstile from 'vue-turnstile';
-
-const config = useRuntimeConfig();
 
 const { data: contactStatus } = await useFetch<ContactPageStatus>('/api/contact');
 
 const turnstileToken = useState<string>('turnstileToken', () => '');
+
+// fix typescript complaints lmao
+interface MyTurnstileOptions {
+  theme: 'light' | 'dark' | 'auto' | undefined;
+}
+
+let turnstileOptions: MyTurnstileOptions = reactive({
+  theme: 'dark', // just default to dark since turnstile doesn't dynamically change theme
+});
+
 </script>
 
 <template>
@@ -20,7 +27,7 @@ const turnstileToken = useState<string>('turnstileToken', () => '');
     <span v-else>
       <h2 class="text-2xl font-semibold">Contact</h2>
       <Spinner />
-      <vue-turnstile :site-key="config.public.turnstileSiteKey" v-model="turnstileToken" theme="dark" />
+      <NuxtTurnstile v-model="turnstileToken" :options="turnstileOptions" />
     </span>
   </div>
 </template>
