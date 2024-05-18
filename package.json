@@ -30,7 +30,7 @@
     "nuxt-security": "^1.4.3",
     "open-props": "^1.7.4",
     "pinia": "^2.1.7",
-    "radix-vue": "^1.7.4",
+    "radix-vue": "^1.8.0",
     "shadcn-nuxt": "^0.10.4",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
@@ -47,6 +47,6 @@
     "@vueuse/nuxt": "^10.9.0",
     "drizzle-kit": "^0.21.2",
     "nitro-cloudflare-dev": "^0.1.4",
-    "wrangler": "^3.56.0"
+    "wrangler": "^3.57.0"
   }
 }

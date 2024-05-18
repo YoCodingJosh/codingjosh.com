@@ -22,13 +22,13 @@ export const useLocationStore = defineStore('locationStore', () => {
   }
 
   const footerString = computed(() => {
-    const beginning = "Built with ❤️ ";
+    const beginning = "Built with ❤️ in ";
 
     if (isKansasCity.value) {
       return beginning + "and served fresh from Kansas City 🍖";
     }
 
-    return beginning + `in Kansas City and served fresh from ${location.value?.city}`;
+    return beginning + `Kansas City and served fresh from ${location.value?.city}`;
   });
 
   return {
