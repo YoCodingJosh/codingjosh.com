@@ -12,6 +12,13 @@ export const projectsData: ProjectDetails[] = [
     underConstruction: true,
   },
   {
+    name: "Chamber",
+    description: "a basic X/Twitter clone. shout your thoughts into the echo chamber!",
+    tech: [ "Ruby on Rails", "Ruby", "PostgreSQL", "Tailwind CSS", "Docker" ],
+    projectType: "open-source",
+    underConstruction: true,
+  },
+  {
     name: "Pop a Dots!",
     description: "a simple game that a friend and I worked on while in college. pop all of the dots! avoid the black dots!",
     tech: [ "Python 3", "Pygame" ],
@@ -50,5 +57,5 @@ export const projectsData: ProjectDetails[] = [
     tech: [ "TypeScript", "Next.js", "React", "Tailwind CSS", "Cloudflare Pages", "Cloudflare Workers", "Supabase", "PostgreSQL" ],
     projectType: "closed-source",
     underConstruction: true,
-  }
+  },
 ];

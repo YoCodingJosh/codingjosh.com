@@ -30,7 +30,7 @@
     "nuxt-security": "^1.4.3",
     "open-props": "^1.7.4",
     "pinia": "^2.1.7",
-    "radix-vue": "^1.8.1",
+    "radix-vue": "^1.8.2",
     "shadcn-nuxt": "^0.10.4",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
