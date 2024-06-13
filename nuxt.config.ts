@@ -29,7 +29,7 @@ export default defineNuxtConfig({
   tailwindcss: {
     exposeConfig: true,
     viewer: true,
-    configPath: 'tailwind.config.ts',
+    configPath: 'tailwind.config.js',
   },
 
   colorMode: {
