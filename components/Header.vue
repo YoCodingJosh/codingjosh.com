@@ -105,6 +105,8 @@ import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger, DropdownMenuItem } from '@/components/ui/dropdown-menu';
 
+import type HeaderLink from '../types/HeaderLink';
+
 const route = useRoute();
 
 function isLinkActive(link: HeaderLink) {

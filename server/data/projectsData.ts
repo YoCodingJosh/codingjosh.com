@@ -6,7 +6,7 @@ export const projectsData: ProjectDetails[] = [
   {
     name: "Kablam!",
     description: "a clone of an old video game",
-    tech: [ "C++", "SDL2" ],
+    tech: [ "C++", "SDL2", "Meson" ],
     repo: "https://github.com/YoCodingJosh/kablam",
     projectType: "open-source",
     underConstruction: true,
@@ -17,6 +17,7 @@ export const projectsData: ProjectDetails[] = [
     tech: [ "Ruby on Rails", "Ruby", "PostgreSQL", "Tailwind CSS", "Docker" ],
     projectType: "open-source",
     underConstruction: true,
+    repo: "https://github.com/YoCodingJosh/chamber"
   },
   {
     name: "Pop a Dots!",
@@ -46,7 +47,7 @@ export const projectsData: ProjectDetails[] = [
   {
     name: "CodingJosh",
     description: "my personal website (you're on it!)",
-    tech: [ "TypeScript", "Nuxt 3", "Tailwind CSS", "Vue 3", "Cloudflare Pages", "Cloudflare D1" ],
+    tech: [ "TypeScript", "Nuxt 3", "Vue 3", "Tailwind CSS", "Cloudflare Pages", "Cloudflare D1" ],
     projectType: "open-source",
     repo: "https://github.com/YoCodingJosh/codingjosh.com",
     url: "https://codingjosh.com/",

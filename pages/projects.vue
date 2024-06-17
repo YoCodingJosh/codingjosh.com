@@ -3,7 +3,7 @@
     <Head>
       <Title>Projects</Title>
     </Head>
-    <p>Projects!</p>
+    <h1 class="text-3xl pb-8">Projects</h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
       <ProjectCard class="project-card" v-for="project in projectData" :key="project.name" v-bind="project" />
     </div>

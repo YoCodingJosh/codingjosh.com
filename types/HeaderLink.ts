@@ -1,4 +1,4 @@
-interface HeaderLink {
+export default interface HeaderLink {
   /**
    * The text to display in the header link.
    */
