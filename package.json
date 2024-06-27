@@ -15,7 +15,7 @@
     "db:studio": "drizzle-kit studio --schema=src/schema.ts"
   },
   "dependencies": {
-    "@nuxt/content": "^2.13.0",
+    "@nuxt/content": "2.12.1",
     "@nuxtjs/turnstile": "^0.8.0",
     "@pinia/nuxt": "^0.5.1",
     "@tailwindcss/typography": "^0.5.13",

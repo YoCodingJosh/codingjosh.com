@@ -81,4 +81,13 @@ export default defineNuxtConfig({
       ]
     }
   },
+
+  // this is a fix for shadcn-vue adding components outside of the project directory lol
+  typescript: {
+    tsConfig: {
+      compilerOptions: {
+        baseUrl: '.'
+      }
+    }
+  },
 })
