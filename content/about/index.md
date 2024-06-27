@@ -2,6 +2,8 @@
 title: About Me!
 ---
 
+:JoshHeadshot
+
 Hello there! I'm Josh, a software engineer from Kansas City.
 
 I'm passionate about writing code and constantly learning new things. Whether it's crafting user-friendly software or exploring the latest technologies, I'm always up for the challenge.

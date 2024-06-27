@@ -4,8 +4,11 @@
       <Title>{{ data?.title }}</Title>
     </Head>
     <article class="prose dark:prose-invert">
-      <h1>{{ data?.title }}</h1>
-      <ContentRenderer :value="data" />
+      <ContentRenderer v-if="data">
+        <h1>{{ data.title }}</h1>
+        <ContentRendererMarkdown :value="data" />
+      </ContentRenderer>
+      <p v-else>Page Not Found</p>
     </article>
   </div>
 </template>

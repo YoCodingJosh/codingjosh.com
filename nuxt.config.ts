@@ -82,6 +82,15 @@ export default defineNuxtConfig({
     }
   },
 
+  components: {
+    dirs: [
+      {
+        path: './components',
+        ignore: ['**/*.ts'],
+      },
+    ],
+  },
+
   // this is a fix for shadcn-vue adding components outside of the project directory lol
   typescript: {
     tsConfig: {
