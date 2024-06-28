@@ -3,12 +3,11 @@
     <Head>
       <Title>{{ data?.title }}</Title>
     </Head>
+    <h1 class="text-3xl pb-8">{{ data?.title }}</h1>
     <article class="prose dark:prose-invert">
       <ContentRenderer v-if="data">
-        <h1>{{ data.title }}</h1>
         <ContentRendererMarkdown :value="data" />
       </ContentRenderer>
-      <p v-else>Page Not Found</p>
     </article>
   </div>
 </template>
