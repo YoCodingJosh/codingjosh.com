@@ -47,7 +47,7 @@ export const projectsData: ProjectDetails[] = [
   {
     name: "CodingJosh",
     description: "my personal website (you're on it!)",
-    tech: [ "TypeScript", "Nuxt 3", "Vue 3", "Tailwind CSS", "Cloudflare Pages", "Cloudflare D1" ],
+    tech: [ "TypeScript", "Nuxt 3", "Vue 3", "Pinia", "Tailwind CSS", "Cloudflare Pages", "Cloudflare D1" ],
     projectType: "open-source",
     repo: "https://github.com/YoCodingJosh/codingjosh.com",
     url: "https://codingjosh.com/",
