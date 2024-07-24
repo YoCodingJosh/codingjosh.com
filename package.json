@@ -23,14 +23,14 @@
     "@vueuse/core": "^10.11.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "drizzle-orm": "^0.32.0",
-    "lucide-vue-next": "^0.411.0",
+    "drizzle-orm": "^0.32.1",
+    "lucide-vue-next": "^0.414.0",
     "nuxt": "^3.12.4",
-    "nuxt-auth-utils": "^0.2.0",
+    "nuxt-auth-utils": "^0.2.1",
     "nuxt-security": "^2.0.0-rc.9",
     "open-props": "^1.7.5",
     "pinia": "^2.1.7",
-    "radix-vue": "^1.9.1",
+    "radix-vue": "^1.9.2",
     "shadcn-nuxt": "^0.10.4",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
@@ -40,13 +40,13 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240718.0",
+    "@cloudflare/workers-types": "^4.20240722.0",
     "@nuxt/image": "^1.7.0",
     "@nuxtjs/color-mode": "^3.4.2",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@vueuse/nuxt": "^10.11.0",
     "drizzle-kit": "^0.23.0",
     "nitro-cloudflare-dev": "^0.1.6",
-    "wrangler": "^3.65.1"
+    "wrangler": "^3.66.0"
   }
 }
