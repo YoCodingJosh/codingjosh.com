@@ -4,20 +4,21 @@ import { type ProjectDetails } from '../../types/ProjectDetails';
 
 export const projectsData: ProjectDetails[] = [
   {
+    name: "Anime Stats for MyAnimeList",
+    description: "a simple website that displays your anime stats from MyAnimeList",
+    tech: [ "TypeScript", "Vue 3", "Hono", "Vuetify", "Cloudflare Workers", "Cloudflare Pages" ],
+    repo: "https://github.com/YoCodingJosh/anime-stats-frontend",
+    url: "https://anime-stats.codingjosh.com/",
+    projectType: "open-source",
+    underConstruction: true,
+  },
+  {
     name: "Kablam!",
     description: "a clone of an old video game",
     tech: [ "C++", "SDL2", "Meson" ],
     repo: "https://github.com/YoCodingJosh/kablam",
     projectType: "open-source",
     underConstruction: true,
-  },
-  {
-    name: "Chamber",
-    description: "a basic X/Twitter clone. shout your thoughts into the echo chamber!",
-    tech: [ "Ruby on Rails", "Ruby", "PostgreSQL", "Tailwind CSS", "Docker" ],
-    projectType: "open-source",
-    underConstruction: true,
-    repo: "https://github.com/YoCodingJosh/chamber"
   },
   {
     name: "Pop a Dots!",
@@ -36,13 +37,12 @@ export const projectsData: ProjectDetails[] = [
     url: 'https://brick-blaster.codingjosh.com/',
   },
   {
-    name: "Anime Stats for MyAnimeList",
-    description: "a simple website that displays your anime stats from MyAnimeList",
-    tech: [ "TypeScript", "Vue 3", "Hono", "Vuetify", "Cloudflare Workers", "Cloudflare Pages" ],
-    repo: "https://github.com/YoCodingJosh/anime-stats-frontend",
-    url: "https://anime-stats.codingjosh.com/",
+    name: "Chamber",
+    description: "a basic X/Twitter clone. shout your thoughts into the echo chamber!",
+    tech: [ "Ruby on Rails", "Ruby", "PostgreSQL", "Tailwind CSS", "Docker" ],
     projectType: "open-source",
     underConstruction: true,
+    repo: "https://github.com/YoCodingJosh/chamber"
   },
   {
     name: "CodingJosh",
