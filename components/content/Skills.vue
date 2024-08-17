@@ -1,8 +1,8 @@
 <template>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-    <div class="bg-slate-600 dark:bg-slate-800 rounded-lg px-4">
+    <div class="bg-slate-300 dark:bg-slate-800 rounded-lg px-4">
       <h3 class="text-lg font-semibold">Proficient in:</h3>
-      <ul>
+      <ul class="marker:text-black dark:marker:text-slate-500">
         <li>
           TypeScript/JavaScript
           <ul>
@@ -35,9 +35,9 @@
         <li>macOS</li>
       </ul>
     </div>
-    <div class="bg-slate-600 dark:bg-slate-800 rounded-lg px-4">
+    <div class="bg-slate-300 dark:bg-slate-800 rounded-lg px-4">
       <h3 class="text-lg font-semibold">Familiar with:</h3>
-      <ul>
+      <ul class="marker:text-black dark:marker:text-slate-500">
         <li>Elixir</li>
         <li>Next.js</li>
         <li>Nuxt</li>
@@ -48,9 +48,9 @@
         <li>Swift</li>
       </ul>
     </div>
-    <div class="bg-slate-600 dark:bg-slate-800 rounded-lg px-4">
+    <div class="bg-slate-300 dark:bg-slate-800 rounded-lg px-4">
       <h3 class="text-lg font-semibold">Learning:</h3>
-      <ul>
+      <ul class="marker:text-black dark:marker:text-slate-500">
         <li>Rust</li>
         <li>Go</li>
         <li>Svelte</li>
