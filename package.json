@@ -24,7 +24,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "drizzle-orm": "^0.33.0",
-    "lucide-vue-next": "^0.427.0",
+    "lucide-vue-next": "^0.428.0",
     "nuxt": "^3.12.4",
     "nuxt-auth-utils": "^0.3.4",
     "nuxt-security": "^2.0.0-rc.9",
@@ -42,11 +42,11 @@
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240815.0",
     "@nuxt/image": "^1.7.0",
-    "@nuxtjs/color-mode": "^3.4.2",
+    "@nuxtjs/color-mode": "^3.4.4",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@vueuse/nuxt": "^11.0.0",
     "drizzle-kit": "^0.24.0",
     "nitro-cloudflare-dev": "^0.1.6",
-    "wrangler": "^3.71.0"
+    "wrangler": "^3.72.0"
   }
 }
