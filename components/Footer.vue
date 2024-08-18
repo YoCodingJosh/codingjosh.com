@@ -17,7 +17,7 @@ const locationStore = useLocationStore();
     <div class="flex flex-col">
       <p>Copyright &copy; {{ new Date().getFullYear() }} Josh Kennedy</p>
       <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-        <span :title="locationStore.isKansasCity ? 'Howdy neighbor!' : ''">{{ locationStore.footerString }}</span>
+        <span :title="locationStore.isKansasCity ? 'Howdy neighbor!' : undefined">{{ locationStore.footerString }}</span>
       </p>
     </div>
   </footer>
