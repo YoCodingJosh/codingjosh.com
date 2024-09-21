@@ -1,15 +1,17 @@
-import rawData from "../data/airports-code@public.json";
+import rawData from "../data/airports.json";
 
 interface AirportData {
-  column_1: string; // IATA code
-  city_name: string;
-  country_code: string;
+  IATA: string;
+  ICAO: string;
+  City: string;
+  Region: string;
+  CountryCode: string;
 }
 
 const data = rawData as AirportData[];
 
 const findIATA = (iata: string) => {
-  return data.find((airport) => airport.column_1 === iata);
+  return data.find((airport) => airport.IATA === iata);
 };
 
 export default defineEventHandler(async (event) => {
@@ -22,8 +24,9 @@ export default defineEventHandler(async (event) => {
 
   const response: ColoInfoResponse = {
     colo: colo,
-    country: airportDetails?.country_code,
-    city: airportDetails?.city_name,
+    country: airportDetails?.CountryCode,
+    region: airportDetails?.Region,
+    city: airportDetails?.City,
   };
 
   // return the data center the request was routed to

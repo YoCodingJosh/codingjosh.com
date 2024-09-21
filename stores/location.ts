@@ -28,7 +28,7 @@ export const useLocationStore = defineStore('locationStore', () => {
       return beginning + "and served fresh from Kansas City 🍖";
     }
 
-    return beginning + `Kansas City and served fresh from ${location.value?.city}`;
+    return beginning + `Kansas City and served fresh from ${location.value?.city}, ${location.value?.region}`;
   });
 
   return {

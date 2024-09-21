@@ -52,11 +52,11 @@ export const projectsData: ProjectDetails[] = [
     repo: "https://github.com/YoCodingJosh/codingjosh.com",
     url: "https://codingjosh.com/",
   },
-  {
-    name: "keihatsu (啓発)",
-    description: "a better confluence and jira with AI - still in the early R&D phase",
-    tech: [ "TypeScript", "Next.js", "React", "Tailwind CSS", "Cloudflare Pages", "Cloudflare Workers", "Supabase", "PostgreSQL" ],
-    projectType: "closed-source",
-    underConstruction: true,
-  },
+  // {
+  //   name: "keihatsu (啓発)",
+  //   description: "a better confluence and jira with AI - still in the early R&D phase",
+  //   tech: [ "TypeScript", "Next.js", "React", "Tailwind CSS", "Cloudflare Pages", "Cloudflare Workers", "Supabase", "PostgreSQL" ],
+  //   projectType: "closed-source",
+  //   underConstruction: true,
+  // },
 ];
