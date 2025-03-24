@@ -6,7 +6,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "codingjosh",
   "main": ".open-next/worker.js",
-  "compatibility_date": "2024-09-26",
+  "compatibility_date": "2025-03-23",
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
     "binding": "ASSETS",
@@ -27,12 +27,18 @@
    * databases, object storage, AI inference, real-time communication and more.
    * https://developers.cloudflare.com/workers/runtime-apis/bindings/
    */
+  "kv_namespaces": [
+    {
+      "binding": "KV",
+      "id": "e59a4950bd764ebaa9a0bc909a45aae4",
+    },
+  ],
 
   /**
    * Environment Variables
    * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
    */
-  // "vars": { "MY_VARIABLE": "production_value" },
+  "vars": { "NEXT_PUBLIC_TURNSTILE_SITE_KEY": "0x4AAAAAAAOy57qtbm5qluJY" },
   /**
    * Note: Use secrets to store sensitive data.
    * https://developers.cloudflare.com/workers/configuration/secrets/

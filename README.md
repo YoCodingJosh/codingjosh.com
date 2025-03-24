@@ -1,6 +1,10 @@
+# CodingJosh.com
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
+
+`pnpx wrangler kv key put --local --namespace-id=e59a4950bd764ebaa9a0bc909a45aae4 contactStatus '{ "available": false, "message": "Contact form is currently under construction.", "email": "you@example.com" }'`
 
 First, run the development server:
 
