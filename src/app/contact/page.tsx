@@ -7,12 +7,13 @@ import { useActionState, useRef, useState } from "react";
 
 const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
-async function getEmailAddress() {
+async function getEmailAddress(_: string | null, data: FormData) {
   return await fetch("/api/contact", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
+    body: JSON.stringify(Object.fromEntries(data)),
   }).then(async (res) => {
     const json = await res.json();
     // @ts-expect-error type error lol
@@ -34,50 +35,55 @@ export default function Contact() {
 
   const formRef = useRef<HTMLFormElement>(null);
 
-  console.log("email", emailAddress);
-
   return (
     <>
-      <p>
-        Feel free to reach out to me! Click the button below to send me an
-        email.
-      </p>
+      {!emailAddress && (
+        <p>
+          Feel free to reach out to me! Click the button below to send me an
+          email.
+        </p>
+      )}
+      <p>Please be respectful of my time in your email.</p>
       {isPending && (
         <span className="mx-auto">
           <LoadingSpinner />
         </span>
       )}
-      {emailAddress && (
-        <span className="mx-auto">
-          <p className="select-none">Email address: {emailAddress}</p>
-          <p>
-            Just email me there. I will get back to you as soon as possible.
+      {emailAddress && !isPending && (
+        <div className="mx-auto">
+          <p className="mx-auto mb-3 select-none pointer-events-none">
+            {emailAddress}
           </p>
-        </span>
+          <p className="mx-auto text-sm">
+            I will get back to you as soon as possible.
+          </p>
+        </div>
       )}
       <div className="flex mx-auto items-center flex-col sm:flex-row">
-        <form action={formAction} ref={formRef}>
-          <Turnstile
-            siteKey={turnstileSiteKey}
-            onSuccess={setToken}
-            onExpire={() => setToken(null)}
-            options={{
-              theme: "light",
-            }}
-          />
-          <button
-            className="mx-auto rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center gap-2 hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto md:w-[158px] disabled:cursor-not-allowed disabled:dark:opacity-25 disabled:bg-gray-400"
-            disabled={!token}
-            onClick={(e) => {
-              e.preventDefault();
-              if (!token) return;
-              formRef.current?.requestSubmit();
-            }}
-          >
-            <Mail />
-            Contact
-          </button>
-        </form>
+        {!emailAddress && (
+          <form action={formAction} ref={formRef}>
+            <Turnstile
+              siteKey={turnstileSiteKey}
+              onSuccess={setToken}
+              onExpire={() => setToken(null)}
+              options={{
+                theme: "light",
+              }}
+            />
+            <button
+              className="mx-auto rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center gap-2 hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto md:w-[158px] disabled:cursor-not-allowed disabled:dark:opacity-25 disabled:bg-gray-400"
+              disabled={!token || isPending}
+              onClick={(e) => {
+                e.preventDefault();
+                if (!token) return;
+                formRef.current?.requestSubmit();
+              }}
+            >
+              <Mail />
+              Contact
+            </button>
+          </form>
+        )}
       </div>
     </>
   );

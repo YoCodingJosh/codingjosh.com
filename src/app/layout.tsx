@@ -31,12 +31,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="grid grid-rows-[auto_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-4 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-            <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start p-10 border-1 border-dashed border-gray-400">
+          <div className="grid grid-rows-[auto_1fr_20px] items-center justify-items-center pb-20 gap-4 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+            <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start p-8 border-1 border-dashed border-gray-400">
               <Navbar />
               {children}
             </main>
-            <footer className="row-start-3 flex flex-col gap-4 flex-wrap items-center justify-center">
+            <footer className="mt-7 row-start-3 flex flex-col gap-4 flex-wrap items-center justify-center">
               <span>
                 Copyright &copy; {new Date().getFullYear()} Josh Kennedy (a.k.a.
                 CodingJosh)
