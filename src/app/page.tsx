@@ -22,7 +22,7 @@ export default function Home() {
       <ol className="list-inside list-disc text-sm/6 max-w-xl text-pretty text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
         <li className="tracking-[-.01em]">
           Full stack developer with extensive experience in building scalable
-          and efficient web applications
+          and efficient web applications in various technologies
         </li>
         <li className="tracking-[-.01em]">Based in Kansas City</li>
         <li className="tracking-[-.01em]">
@@ -32,6 +32,9 @@ export default function Home() {
           Currently a front-end developer in ed-tech, crafting solutions with
           React, TypeScript, Tailwind, TanStack Query, TanStack Router, and
           Jotai
+        </li>
+        <li className="tracking-[-.01em]">
+          Fluent in English. Basic knowledge of Japanese
         </li>
       </ol>
 
