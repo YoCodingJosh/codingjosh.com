@@ -27,13 +27,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="grid grid-rows-[auto_1fr_20px] items-center justify-items-center pb-20 gap-4 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-            <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start p-8 border-1 border-dashed border-gray-400">
+            <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start p-4 sm:p-8 border-1 border-dashed border-gray-400 w-full sm:w-auto">
               <Navbar />
               {children}
             </main>
