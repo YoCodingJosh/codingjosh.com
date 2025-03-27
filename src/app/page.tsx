@@ -19,7 +19,7 @@ export default function Home() {
         height={150}
         priority
       />
-      <ol className="list-inside list-disc text-sm/6 max-w-xl text-pretty text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
+      <ol className="list-inside list-disc text-sm/6 max-w-xl text-pretty text-left font-[family-name:var(--font-geist-mono)]">
         <li className="tracking-[-.01em]">
           Full stack developer with extensive experience in building scalable
           and efficient web applications in various technologies

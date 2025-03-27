@@ -53,7 +53,9 @@ export default function Navbar({ className }: NavbarProps) {
               {item.label}
             </Link>
           ))}
-          <DarkModeToggle />
+          <div className="px-4">
+            <DarkModeToggle />
+          </div>
         </div>
 
         {/* Mobile Navigation */}

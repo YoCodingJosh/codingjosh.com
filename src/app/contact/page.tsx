@@ -15,6 +15,12 @@ async function getEmailAddress(_: string | null, data: FormData) {
     },
     body: JSON.stringify(Object.fromEntries(data)),
   }).then(async (res) => {
+    if (!res.ok) {
+      const json = await res.json();
+      // @ts-expect-error type error lol
+      return (json.error as string) || "Unknown error occurred";
+    }
+
     const json = await res.json();
     // @ts-expect-error type error lol
     return json.email as string;
@@ -55,7 +61,7 @@ export default function Contact() {
             {emailAddress}
           </p>
           <p className="mx-auto text-sm">
-            I will get back to you as soon as possible.
+            I will try to get back to you as soon as possible.
           </p>
         </div>
       )}
