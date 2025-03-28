@@ -44,12 +44,14 @@ export default function Contact() {
   return (
     <>
       {!emailAddress && (
-        <p>
+        <p className="text-center font-[family-name:var(--font-geist-mono)]">
           Feel free to reach out to me! Click the button below to send me an
           email.
         </p>
       )}
-      <p>Please be respectful of my time in your email.</p>
+      <p className="text-center font-[family-name:var(--font-geist-mono)]">
+        Please be respectful of my time in your email.
+      </p>
       {isPending && (
         <span className="mx-auto">
           <LoadingSpinner />
@@ -57,10 +59,10 @@ export default function Contact() {
       )}
       {emailAddress && !isPending && (
         <div className="mx-auto">
-          <p className="mx-auto mb-3 select-none pointer-events-none">
+          <p className="mx-auto text-xl mb-3 select-none pointer-events-none">
             {emailAddress}
           </p>
-          <p className="mx-auto text-sm">
+          <p className="mx-auto text-sm font-[family-name:var(--font-geist-mono)]">
             I will try to get back to you as soon as possible.
           </p>
         </div>
