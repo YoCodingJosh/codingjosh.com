@@ -37,7 +37,14 @@ export default function Navbar({ className }: NavbarProps) {
 
   return (
     <header className={cn("w-full", className)}>
-      {!isOnHomePage && <h3 className="text-xl font-bold">Josh Kennedy</h3>}
+      <h3
+        className={cn(
+          "text-xl font-bold transition-opacity duration-300 ease-in-out",
+          isOnHomePage ? "opacity-0" : "opacity-100",
+        )}
+      >
+        Josh Kennedy
+      </h3>
       <nav className="flex items-center justify-between">
         {/* Desktop Navigation */}
         <div className="hidden sm:flex gap-4">
