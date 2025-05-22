@@ -29,11 +29,6 @@ export default function Home() {
           Passionate about spreading knowledge and fostering growth
         </li>
         <li className="tracking-[-.01em]">
-          Currently a front-end developer in ed-tech, crafting solutions with
-          React, TypeScript, Tailwind, TanStack Query, TanStack Router, and
-          Jotai
-        </li>
-        <li className="tracking-[-.01em]">
           Fluent in English. Basic knowledge of Japanese
         </li>
       </ol>
