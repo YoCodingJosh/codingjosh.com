@@ -32,8 +32,8 @@ export const usesGroups: readonly UsesGroup[] = [
     glyph: '>_',
     accent: 'c3',
     items: [
-      { name: 'Shell', note: 'zsh / fish?' },
-      { name: 'Terminal app', note: 'fill in' },
+      { name: 'Shell', note: 'zsh + bash' },
+      { name: 'Terminal app', note: 'Ghostty + Konsole + Kitty' },
       { name: 'Prompt', note: 'fill in' },
     ],
   },
@@ -43,7 +43,7 @@ export const usesGroups: readonly UsesGroup[] = [
     accent: 'c1',
     items: [
       { name: 'Machine', note: 'fill in' },
-      { name: 'Keyboard', note: 'fill in' },
+      { name: 'Keyboard', note: 'Realforce and HHKB' },
       { name: 'Monitor', note: 'fill in' },
     ],
   },
