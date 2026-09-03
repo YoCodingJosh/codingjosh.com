@@ -1,34 +1,49 @@
-# CodingJosh.com
+# codingjosh.com
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Personal site for Josh Kennedy. React + Tailwind on [TanStack Start](https://tanstack.com/start) with
+TanStack Query, deployed to Cloudflare Workers.
 
-## Getting Started
+## Stack
 
-`pnpx wrangler kv key put --local --namespace-id=e59a4950bd764ebaa9a0bc909a45aae4 contactStatus '{ "available": false, "message": "Contact form is currently under construction.", "email": "you@example.com" }'`
+- **TanStack Start** for routing, SSR, and server functions (`src/routes`, `src/server`)
+- **TanStack Query** for client caching of server data (`src/lib/*-query.ts` style modules)
+- **Tailwind CSS v4** with the design tokens in `src/styles/app.css`
+- **Cloudflare Workers** via `@cloudflare/vite-plugin` and Wrangler, with a KV namespace for caching
 
-First, run the development server:
+Site copy that is not yet driven by an API lives in `src/data/` so pages stay data-driven and easy to
+swap for a real source later.
+
+## Live data
+
+- **Now watching** (`src/server/mal.ts`): pulls the most recently updated entry on the MyAnimeList
+  list configured in `src/data/site.ts` and caches it in KV for 10 minutes (stale data is served if
+  MAL is down). Needs the `MAL_CLIENT_ID` secret from <https://myanimelist.net/apiconfig>.
+- **Contact email reveal** (`src/server/contact.ts`): verifies a Cloudflare Turnstile token, then reads
+  the `contactStatus` key from KV. Needs the `TURNSTILE_SECRET_KEY` secret. The site key is a plain
+  var in `wrangler.jsonc`.
+
+## Local development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+cp .dev.vars.example .dev.vars   # then fill in the secrets
+pnpm dev                          # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Seed the local KV namespace with the contact status once:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm wrangler kv key put --local --namespace-id=e59a4950bd764ebaa9a0bc909a45aae4 contactStatus \
+  '{ "available": true, "message": "Contact is closed right now.", "email": "you@example.com" }'
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deploying
 
-## Learn More
+```bash
+pnpm wrangler secret put MAL_CLIENT_ID
+pnpm wrangler secret put TURNSTILE_SECRET_KEY
+pnpm run deploy
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`pnpm run deploy` builds, type-checks, and runs `wrangler deploy`. `pnpm cf-typegen` regenerates
+`worker-configuration.d.ts` after changing bindings in `wrangler.jsonc` (it also runs on install).
