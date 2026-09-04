@@ -23,6 +23,7 @@ export const site = {
   description:
     "Josh Kennedy, full stack developer and architect in Kansas City. Projects, writing, and what I'm watching.",
   location: 'Kansas City',
+  timeZone: 'America/Chicago',
   eyebrow: 'Kansas City · full stack developer & architect',
   lead: 'I build web apps that scale and, more importantly, are fun to use. Comfortable anywhere in the stack, from Postgres to pixels.',
   currently: {
@@ -42,13 +43,11 @@ export const site = {
     profileUrl: `https://myanimelist.net/profile/${MAL_USERNAME}`,
   },
   socials: [
+    { label: 'X', href: 'https://x.com/YoCodingJosh', accent: 'c4' },
     { label: 'GitHub', href: 'https://github.com/YoCodingJosh', accent: 'c1' },
     { label: 'MyAnimeList', href: `https://myanimelist.net/profile/${MAL_USERNAME}`, accent: 'c2' },
-    // TODO: add the LinkedIn profile URL. The link stays hidden while this is null.
-    { label: 'LinkedIn', href: null, accent: 'c4' },
   ] as readonly Social[],
   kofi: 'https://ko-fi.com/Z8Z810D8H7',
-  paypal: 'https://www.paypal.com/paypalme/codingjosh',
 }
 
 export const visibleSocials = site.socials.filter(

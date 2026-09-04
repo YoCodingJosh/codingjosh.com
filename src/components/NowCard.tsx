@@ -46,14 +46,14 @@ export function CoverPlaceholder({ pattern }: CoverPlaceholderProps) {
 interface MediaRowProps {
   cover: ReactNode
   title: string
-  sub: string
+  sub: ReactNode
 }
 
 export function MediaRow({ cover, title, sub }: MediaRowProps) {
   return (
     <div className="flex items-center gap-3">
       {cover}
-      <div className="flex min-w-0 flex-col gap-[3px]">
+      <div className="flex min-w-0 flex-col gap-0.75">
         <div className="font-display text-[17px] leading-tight font-bold">{title}</div>
         <div className="text-[13px] text-mute">{sub}</div>
       </div>

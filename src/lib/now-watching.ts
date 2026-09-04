@@ -41,3 +41,16 @@ export function episodeLine(item: NowWatching): string {
   if (item.score) parts.push(`★ ${item.score}/10`)
   return parts.join(' · ')
 }
+
+/** The time of the latest MAL list activity, displayed in Josh's local time. */
+export function activityDateTime(updatedAt: string, timeZone: string): string {
+  return new Intl.DateTimeFormat('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    timeZone,
+    timeZoneName: 'short',
+  }).format(new Date(updatedAt))
+}

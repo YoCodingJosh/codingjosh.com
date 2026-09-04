@@ -11,7 +11,7 @@ export function Footer() {
       <div className="h-[10px] border-b-[3px] border-ink" style={{ background: STRIPES }} />
       <div className="mx-auto flex max-w-[1040px] flex-wrap items-center justify-between gap-5 p-7">
         <div className="font-mono text-[13px] text-mute">
-          © {new Date().getFullYear()} {site.name} · built with React + Tailwind ·{' '}
+          © {new Date().getFullYear()} {site.name} · built with ❤️ ·{' '}
           <span className="animate-blink">▮</span>
         </div>
         <div className="flex flex-wrap gap-4 font-mono text-[13px]">

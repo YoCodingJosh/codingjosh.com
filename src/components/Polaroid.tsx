@@ -15,7 +15,7 @@ export function Polaroid({ alt, caption, className, imgClassName, captionClassNa
   return (
     <div className={cn('relative border-[3px] border-ink bg-card', className)}>
       <img
-        src="/josh_portrait.jpg"
+        src="/josh_morioh-fs8.png"
         alt={alt}
         className={cn('block border-2 border-ink object-cover', imgClassName)}
       />

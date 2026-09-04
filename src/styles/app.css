@@ -1,8 +1,5 @@
 @import "tailwindcss";
 
-/* The design handoff prototype lives in the repo; keep its runtime out of class scanning. */
-@source not "../../design_handoff_codingjosh_redesign";
-
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -23,6 +20,7 @@
   --color-c2: #1fb7a6;
   --color-c3: #ffc94a;
   --color-c4: #8b7cf6;
+  --color-c5: #b24dbf;
   --color-on-accent: #111111;
 
   --animate-page-in: page-in 0.35s ease-out both;
@@ -122,4 +120,7 @@
 }
 @utility shadow-hard-c4 {
   --shadow-hard-color: var(--color-c4);
+}
+@utility shadow-hard-c5 {
+  --shadow-hard-color: var(--color-c5);
 }

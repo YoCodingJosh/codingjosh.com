@@ -1,6 +1,11 @@
 import { useSuspenseQuery } from '@tanstack/react-query'
 import { site } from '@/data/site'
-import { episodeLine, nowWatchingLabel, nowWatchingQuery } from '@/lib/now-watching'
+import {
+  activityDateTime,
+  episodeLine,
+  nowWatchingLabel,
+  nowWatchingQuery,
+} from '@/lib/now-watching'
 import { CoverPlaceholder, MediaRow, NowCard } from './NowCard'
 
 /** Live "now watching" card fed by MyAnimeList through a server function + KV cache. */
@@ -40,7 +45,15 @@ export function NowWatchingCard() {
             )
           }
           title={data.title}
-          sub={`${episodeLine(data)} · via MyAnimeList`}
+          sub={
+            <>
+              <span className="block">{episodeLine(data)}</span>
+              <span className="block">
+                <time dateTime={data.updatedAt}>{activityDateTime(data.updatedAt, site.timeZone)}</time>
+                {' · via MyAnimeList'}
+              </span>
+            </>
+          }
         />
       </a>
     </NowCard>
