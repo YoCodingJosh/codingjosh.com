@@ -17,7 +17,9 @@ export function Polaroid({ alt, caption, className, imgClassName, captionClassNa
       <img
         src="/josh_morioh-fs8.png"
         alt={alt}
-        className={cn('block border-2 border-ink object-cover', imgClassName)}
+        width={500}
+        height={500}
+        className={cn('block aspect-square w-full border-2 border-ink object-cover', imgClassName)}
       />
       <div
         className={cn(

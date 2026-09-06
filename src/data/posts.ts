@@ -24,7 +24,7 @@ export const tagAccent: Record<PostTag, Accent> = {
  * PLACEHOLDER CONTENT from the design handoff. Replace with real posts (MDX or a CMS) before
  * these go live; the Writing page and the home "Latest writing" list both read from here.
  */
-export const posts: readonly Post[] = [
+export const draftPosts: readonly Post[] = [
   {
     slug: 'cloning-kaboom-in-go',
     title: 'Cloning Kaboom in Go with Ebitengine',
@@ -55,6 +55,9 @@ export const posts: readonly Post[] = [
     excerpt: 'Third time is the charm. This one has a real data model.',
   },
 ]
+
+// Only entries with a real article URL are published.
+export const posts = draftPosts.filter((post): post is Post & { href: string } => Boolean(post.href))
 
 export const recentPosts = [...posts]
   .sort((a, b) => b.date.localeCompare(a.date))

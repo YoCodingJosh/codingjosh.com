@@ -18,8 +18,8 @@ export function NowWatchingCard() {
         <a href={site.mal.profileUrl} target="_blank" rel="noreferrer">
           <MediaRow
             cover={<CoverPlaceholder pattern="diagonal" />}
-            title="Between shows"
-            sub="nothing on deck · via MyAnimeList"
+            title="Explore my anime list"
+            sub="What I’m into · via MyAnimeList"
           />
         </a>
       </NowCard>

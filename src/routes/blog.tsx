@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { ButtonLink } from '@/components/Button'
 import { PageHeader } from '@/components/PageHeader'
 import { type Post, posts, tagAccent } from '@/data/posts'
 import { accentBg, accentHoverShadow } from '@/lib/accent'
@@ -24,7 +25,17 @@ function WritingPage() {
           <PostCard key={post.slug} post={post} />
         ))}
         {sorted.length === 0 && (
-          <p className="text-[15px] text-mute">Nothing published yet. The drafts folder is full, though.</p>
+          <div className="writing-empty">
+            <span className="font-mono text-xs text-mute">NOTES FROM THE WORKBENCH</span>
+            <h2 className="font-display text-3xl font-bold">A little quiet here. For now.</h2>
+            <p className="max-w-md text-mute">
+              This is where I’ll share notes on software, side projects, and the things I learn
+              while building. No posts published yet.
+            </p>
+            <ButtonLink to="/projects" variant="secondary" className="self-start">
+              Explore my projects →
+            </ButtonLink>
+          </div>
         )}
       </div>
     </div>
@@ -35,7 +46,11 @@ function PostCard({ post }: { post: Post }) {
   const accent = tagAccent[post.tag]
   const className = cn(
     'grid items-start gap-5 rounded-[14px] border-2 border-ink bg-card p-5 shadow-hard-5 transition-all duration-150 sm:grid-cols-[110px_1fr]',
-    post.href && cn('hover:-translate-x-[3px] hover:-translate-y-[3px] hover:shadow-hard-8', accentHoverShadow[accent]),
+    post.href &&
+      cn(
+        'hover:-translate-x-[3px] hover:-translate-y-[3px] hover:shadow-hard-8',
+        accentHoverShadow[accent],
+      ),
   )
   const body = (
     <>

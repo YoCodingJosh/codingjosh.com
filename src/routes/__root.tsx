@@ -68,10 +68,11 @@ function RootLayout() {
   const pathname = useLocation({ select: (location) => location.pathname })
 
   return (
-    <div className="relative min-h-screen overflow-clip bg-paper text-ink transition-colors duration-300">
+    <div className="relative flex min-h-screen flex-col overflow-clip bg-paper text-ink transition-colors duration-300">
       <BackgroundShapes />
+      <a href="#main-content" className="skip-link">Skip to content</a>
       <Header />
-      <main className="relative z-[1] mx-auto max-w-[1040px] px-7 pt-6 pb-20">
+      <main id="main-content" tabIndex={-1} className="relative z-[1] mx-auto w-full max-w-[1160px] flex-1 px-6 pt-6 pb-24 sm:px-10">
         {/* Keyed on the path so every navigation replays the page-in animation. */}
         <div key={pathname} className="animate-page-in">
           <Outlet />

@@ -1,4 +1,5 @@
 import { Link, useLocation } from '@tanstack/react-router'
+import { useState } from 'react'
 import { navItems } from '@/data/nav'
 import { accentBg } from '@/lib/accent'
 import { cn } from '@/lib/cn'
@@ -6,47 +7,71 @@ import { toggleTheme } from '@/lib/theme'
 
 export function Header() {
   const pathname = useLocation({ select: (location) => location.pathname })
+  const [open, setOpen] = useState(false)
 
   return (
-    <header className="relative z-[2] mx-auto flex max-w-[1040px] flex-wrap items-center justify-between gap-x-4 gap-y-3 px-7 py-[22px]">
+    <header className="site-header">
       <Link
         to="/"
-        className="flex items-center gap-2.5 font-mono text-[15px] font-semibold tracking-[-0.01em]"
+        onClick={() => setOpen(false)}
+        className="brand"
+        aria-label="codingjosh.com home"
       >
-        <span className="size-[22px] rounded-[4px] border-2 border-ink bg-c1 shadow-hard-3" />
+        <span aria-hidden className="brand-mark">
+          j.
+        </span>
         <span>
-          codingjosh<span className="text-c2">.com</span>
+          codingjosh<span className="text-mute">.com</span>
         </span>
       </Link>
-
-      <nav className="ml-auto flex flex-wrap items-center justify-end gap-1.5">
+      <div className="ml-auto flex items-center gap-3 md:order-2">
+        <button
+          type="button"
+          onClick={toggleTheme}
+          aria-label="Toggle dark mode"
+          className="theme-toggle"
+        >
+          <svg
+            aria-hidden
+            viewBox="0 0 24 24"
+            className="size-[18px]"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+          >
+            <circle cx="12" cy="12" r="8" />
+            <path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor" stroke="none" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          className="menu-toggle"
+          aria-expanded={open}
+          aria-controls="primary-nav"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? 'Close ×' : 'Menu +'}
+        </button>
+      </div>
+      <nav
+        id="primary-nav"
+        aria-label="Main navigation"
+        className={cn('primary-nav', open && 'is-open')}
+      >
         {navItems.map((item) => {
           const active = item.to === '/' ? pathname === '/' : pathname.startsWith(item.to)
           return (
             <Link
               key={item.to}
               to={item.to}
+              onClick={() => setOpen(false)}
               aria-current={active ? 'page' : undefined}
-              className={cn(
-                'rounded-full border-2 px-3 py-[7px] font-mono text-[13px] transition-all duration-150',
-                active
-                  ? cn(accentBg[item.accent], 'border-ink text-on-accent shadow-hard-3')
-                  : 'border-transparent hover:-translate-x-px hover:-translate-y-px hover:border-ink',
-              )}
+              className={cn('nav-link', active && cn(accentBg[item.accent], 'is-active'))}
             >
               {item.label}
             </Link>
           )
         })}
-        <button
-          type="button"
-          onClick={toggleTheme}
-          aria-label="Toggle dark mode"
-          className="ml-2 grid size-9 cursor-pointer place-items-center rounded-full border-2 border-ink bg-card font-mono text-[13px] font-semibold shadow-hard-3 transition-all duration-150 hover:-translate-x-px hover:-translate-y-px hover:shadow-hard-4"
-        >
-          <span className="dark:hidden">☼</span>
-          <span className="hidden dark:inline">☾</span>
-        </button>
       </nav>
     </header>
   )

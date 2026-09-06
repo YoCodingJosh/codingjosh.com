@@ -8,10 +8,6 @@ export interface NowPlaying {
 }
 
 /**
- * PLACEHOLDER from the design handoff. Hand-edit this when you start something new; a live source
- * (RetroAchievements, Steam, ...) can replace it later.
+ * Set a current game here when ready. Null shows general gaming interests instead.
  */
-export const nowPlaying: NowPlaying = {
-  title: 'Retro game title',
-  meta: 'SNES · 1994',
-}
+export const nowPlaying: NowPlaying | null = null

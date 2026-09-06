@@ -20,124 +20,103 @@ export const Route = createFileRoute('/')({
 
 function HomePage() {
   return (
-    <div className="flex flex-col gap-[72px]">
+    <div className="home-page">
       <Hero />
-      <NowRow />
       <SelectedProjects />
+      <NowRow />
       <WritingAndFacts />
+      <section className="contact-banner">
+        <div>
+          <MonoLabel>GOOD THINGS START WITH A CONVERSATION</MonoLabel>
+          <h2 className="mt-3 font-display text-[clamp(30px,4vw,44px)] leading-tight font-extrabold tracking-tight">
+            Got something in mind?
+          </h2>
+          <p className="mt-3 text-mute">
+            I’m open to interesting contract work and collaborations.
+          </p>
+        </div>
+        <ButtonLink to="/contact" shadow="c2" className="shrink-0">
+          Let’s talk ↗
+        </ButtonLink>
+      </section>
     </div>
   )
 }
 
 function Hero() {
   return (
-    <section className="grid items-center gap-12 pt-9 md:grid-cols-[1.25fr_0.75fr]">
-      <div className="flex flex-col gap-[22px]">
-        <div className="inline-flex items-center gap-2 font-mono text-[12px] text-mute">
-          <span className="size-2 rounded-full bg-c2" />
+    <section className="hero">
+      <div className="hero-copy">
+        <div className="eyebrow">
+          <span aria-hidden className="size-2 rounded-full bg-c2" />
           {site.eyebrow}
         </div>
-        <h1 className="font-display text-[52px] leading-[0.98] font-extrabold tracking-[-0.03em] text-balance md:text-[76px]">
-          Hey, I'm{' '}
-          <span className="relative isolate inline-block px-1.5">
-            <span
-              aria-hidden
-              className="absolute inset-x-0 bottom-2 -z-10 h-[22px] -rotate-[1.5deg] bg-c3"
-            />
+        <h1 className="hero-title">
+          Hey, I’m{' '}
+          <span className="hero-name">
             Josh.
+            <svg aria-hidden viewBox="0 0 260 22">
+              <path d="M4 15Q120 0 254 11M22 21Q150 10 233 18" />
+            </svg>
           </span>
         </h1>
-        <p className="max-w-[520px] text-[20px] leading-normal text-pretty">{site.lead}</p>
-        <div className="mt-1.5 flex flex-wrap gap-3">
+        <p className="hero-lead">{site.lead}</p>
+        <div className="flex flex-wrap gap-3 pt-2">
           <ButtonLink to="/projects" shadow="c1">
-            See my projects →
+            Explore my work ↗
           </ButtonLink>
-          <ButtonLink to="/contact" variant="secondary">
-            Say hi
+          <ButtonLink to="/about" variant="secondary">
+            A little about me
           </ButtonLink>
         </div>
-        <div className="mt-2 flex flex-wrap gap-2">
-          {site.heroChips.map((chip) => (
-            <Chip key={chip.label} accent={chip.accent}>
-              {chip.label}
-            </Chip>
-          ))}
+        <div className="hero-stack">
+          <span className="font-mono text-[11px] text-mute">MY GO-TO TOOLS</span>
+          <div className="flex flex-wrap gap-2">
+            {site.heroChips.map((chip) => (
+              <Chip key={chip.label} accent={null}>
+                {chip.label}
+              </Chip>
+            ))}
+          </div>
         </div>
       </div>
-
-      <div className="relative justify-self-center">
-        <div className="absolute -top-[18px] -right-[14px] z-0 size-[74px] rounded-full bg-c1" />
-        <div
-          className="absolute bottom-6 -left-[26px] z-0 size-[90px]"
-          style={{
-            background: 'radial-gradient(var(--color-ink) 1.8px, transparent 2.2px) 0 0 / 12px 12px',
-          }}
-        />
+      <div className="portrait-scene">
+        <div aria-hidden className="portrait-orbit" />
+        <div aria-hidden className="portrait-dots" />
         <Polaroid
-          alt="Josh lookin fresh and ready to code"
-          caption="josh_portrait.jpg · KC, MO"
-          className="z-[1] w-[250px] rotate-3 px-3 pt-3 pb-10 shadow-hard-8 transition-transform duration-150 motion-safe:hover:rotate-0"
-          imgClassName="size-[250px]"
+          alt="Josh wearing sunglasses, with an illustrated Morioh backdrop"
+          caption="Josh Kennedy · Kansas City, MO"
+          className="hero-polaroid"
+          imgClassName="aspect-square w-full"
         />
-        <svg
-          aria-hidden
-          viewBox="0 0 120 20"
-          className="absolute -right-[30px] -bottom-[14px] z-[2] w-[120px]"
-        >
-          <path
-            d="M0 10 Q15 0 30 10 T60 10 T90 10 T120 10"
-            fill="none"
-            stroke="var(--color-c2)"
-            strokeWidth="5"
-            strokeLinecap="round"
-          />
+        <span className="portrait-sticker">
+          a person.
+          <br />
+          who codes.
+        </span>
+        <svg aria-hidden viewBox="0 0 80 80" className="portrait-spark">
+          <path d="M40 4v72M4 40h72M14 14l52 52M14 66l52-52" />
         </svg>
       </div>
     </section>
   )
 }
 
-function NowRow() {
-  return (
-    <section className="grid gap-5 md:grid-cols-3">
-      <NowWatchingCard />
-      <NowCard label="NOW PLAYING" tilt={1}>
-        <MediaRow
-          cover={
-            nowPlaying.cover ? (
-              <img
-                src={nowPlaying.cover}
-                alt=""
-                width={48}
-                height={64}
-                className="h-16 w-12 flex-none border-2 border-ink object-cover"
-              />
-            ) : (
-              <CoverPlaceholder pattern="vertical" />
-            )
-          }
-          title={nowPlaying.title}
-          sub={nowPlaying.meta}
-        />
-      </NowCard>
-      <NowCard label="CURRENTLY" tilt={-1} inverted>
-        <div className="font-display text-[17px] leading-[1.3] font-bold">{site.currently.headline}</div>
-        <div className="text-[13px] opacity-75">{site.currently.sub}</div>
-      </NowCard>
-    </section>
-  )
-}
-
 function SelectedProjects() {
   return (
-    <section className="flex flex-col gap-[22px]">
-      <div className="flex items-baseline justify-between gap-4">
-        <h2 className="font-display text-[34px] font-extrabold tracking-[-0.02em]">Selected projects</h2>
-        <Link to="/projects" className="border-b-2 border-b-c1 font-mono text-[13px] whitespace-nowrap">
-          all projects →
+    <section className="flex flex-col gap-7">
+      <div className="section-title-row">
+        <div>
+          <MonoLabel>01 / THE WORK</MonoLabel>
+          <h2 className="section-title">
+            A few things I’m building<span className="text-c1">.</span>
+          </h2>
+        </div>
+        <Link to="/projects" className="text-link">
+          All projects ↗
         </Link>
       </div>
-      <div className="grid gap-5 md:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-3">
         {featuredProjects.map((project) => (
           <ActiveProjectCard key={project.slug} project={project} compact />
         ))}
@@ -146,32 +125,85 @@ function SelectedProjects() {
   )
 }
 
+function NowRow() {
+  return (
+    <section className="flex flex-col gap-6">
+      <div className="section-title-row">
+        <div>
+          <MonoLabel>02 / AWAY FROM THE README</MonoLabel>
+          <h2 className="section-title">A little life lately.</h2>
+        </div>
+        <span className="font-mono text-xs text-mute">Code. Anime. One more level.</span>
+      </div>
+      <div className="grid gap-6 md:grid-cols-3">
+        <NowWatchingCard />
+        <NowCard label={nowPlaying ? 'NOW PLAYING' : 'OFF THE CLOCK'} tilt={1}>
+          <MediaRow
+            cover={
+              nowPlaying?.cover ? (
+                <img
+                  src={nowPlaying.cover}
+                  alt=""
+                  width={48}
+                  height={64}
+                  className="h-16 w-12 flex-none border-2 border-ink object-cover"
+                />
+              ) : (
+                <CoverPlaceholder pattern="vertical" />
+              )
+            }
+            title={nowPlaying?.title ?? 'A soft spot for retro games'}
+            sub={nowPlaying?.meta ?? 'Retro, puzzle, and FPS favorites'}
+          />
+        </NowCard>
+        <NowCard label="ON MY WORKBENCH" tilt={-1} inverted>
+          <div className="font-display text-[19px] leading-[1.3] font-bold">
+            {site.currently.headline}
+          </div>
+          <div className="text-[13px] opacity-75">{site.currently.sub}</div>
+        </NowCard>
+      </div>
+    </section>
+  )
+}
+
 function WritingAndFacts() {
   return (
-    <section className="grid items-start gap-12 md:grid-cols-2">
-      <div className="flex flex-col gap-[18px]">
-        <h2 className="font-display text-[34px] font-extrabold tracking-[-0.02em]">Latest writing</h2>
-        <div className="flex flex-col">
-          {recentPosts.map((post) => (
-            <Link
-              key={post.slug}
-              to="/blog"
-              className="flex items-baseline justify-between gap-4 border-b-2 border-dashed border-line py-3.5 transition-colors hover:text-c1"
-            >
-              <span className="font-display text-[18px] font-bold">{post.title}</span>
-              <span className="font-mono text-[12px] whitespace-nowrap text-mute">{post.date}</span>
-            </Link>
-          ))}
-          {recentPosts.length === 0 && (
-            <p className="py-3.5 text-[15px] text-mute">Nothing published yet. Soon.</p>
-          )}
-        </div>
+    <section className="grid items-stretch gap-8 md:grid-cols-[1.2fr_1fr]">
+      <div className="flex flex-col gap-4 py-2">
+        <MonoLabel>03 / FIELD NOTES</MonoLabel>
+        <h2 className="section-title mt-0">A space to think out loud.</h2>
+        {recentPosts.length ? (
+          recentPosts.map((post) => (
+            <a key={post.slug} href={post.href} className="text-link py-3">
+              {post.title} ↗
+            </a>
+          ))
+        ) : (
+          <p className="max-w-md text-[17px] leading-relaxed text-mute">
+            Notes on building software, following rabbit holes, and figuring things out along the
+            way. The first post is still ahead.
+          </p>
+        )}
+        <Link to="/blog" className="text-link self-start">
+          Visit the writing corner ↗
+        </Link>
       </div>
-      <div className="flex -rotate-1 flex-col gap-3 rounded-[14px] border-2 border-ink bg-c3 p-[26px] text-on-accent shadow-hard-5">
-        <MonoLabel className="text-on-accent">FUN FACTS.TXT</MonoLabel>
-        <ul className="list-disc pl-[18px] text-[15px] leading-[1.7]">
+      <div className="facts-note">
+        <div className="flex items-center justify-between">
+          <MonoLabel className="text-on-accent">A FEW THINGS ABOUT ME</MonoLabel>
+          <span aria-hidden className="text-2xl">
+            ✳
+          </span>
+        </div>
+        <ul className="mt-3 flex flex-col gap-2.5 text-[16px]">
           {quickFacts.map((fact) => (
-            <li key={fact}>{fact}</li>
+            <li key={fact} className="flex items-baseline gap-3">
+              <span aria-hidden className="font-mono text-xs">
+                ↳
+              </span>
+              {fact}
+            </li>
           ))}
         </ul>
       </div>

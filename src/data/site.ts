@@ -19,16 +19,16 @@ const MAL_USERNAME = 'CodingJosh'
 export const site = {
   name: 'Josh Kennedy',
   domain: 'codingjosh.com',
-  title: 'codingjosh.com',
+  title: 'Josh Kennedy · Developer & architect',
   description:
     "Josh Kennedy, full stack developer and architect in Kansas City. Projects, writing, and what I'm watching.",
   location: 'Kansas City',
   timeZone: 'America/Chicago',
-  eyebrow: 'Kansas City · full stack developer & architect',
-  lead: 'I build web apps that scale and, more importantly, are fun to use. Comfortable anywhere in the stack, from Postgres to pixels.',
+  eyebrow: 'FULL STACK DEVELOPER & ARCHITECT',
+  lead: 'I build thoughtful web apps, from Postgres to pixels. Scalable under the hood. A little more fun on the surface.',
   currently: {
-    headline: 'Shipping a video streaming platform on Cloudflare Workers + Go.',
-    sub: 'Open to interesting contract work.',
+    headline: 'A streaming platform, built from the ground up.',
+    sub: 'Cloudflare Workers + Go · in progress',
   },
   heroChips: [
     { label: 'TypeScript', accent: 'c2' },

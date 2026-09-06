@@ -29,9 +29,9 @@ export interface Project {
 export const projects: readonly Project[] = [
   {
     slug: 'video-streaming',
-    name: 'Video Streaming Site',
+    name: 'Video streaming platform',
     blurb:
-      'A platform for watching licensed media. Astro, Hono, and React on Cloudflare Workers up front; Go + Gin behind it; Postgres on Supabase.',
+      'A home for licensed media, with a React viewing experience, Cloudflare Workers at the edge, and a Go API behind the scenes.',
     stack: ['Astro', 'Hono', 'Go', 'Postgres'],
     status: 'active',
     art: { kind: 'dots', a: 'c1', b: 'c3' },
@@ -40,9 +40,9 @@ export const projects: readonly Project[] = [
   },
   {
     slug: 'ai-business-software',
-    name: 'AI-augmented business software',
+    name: 'AI for the everyday',
     blurb:
-      'AI utilities that smooth out day-to-day operations so stakeholders can make informed decisions.',
+      'Business software that puts AI to practical use: simplifying daily operations and helping people make informed decisions.',
     stack: ['Hono', 'Workers', 'React', 'TanStack'],
     status: 'active',
     art: { kind: 'zig', a: 'c4', b: 'c2' },
@@ -53,7 +53,7 @@ export const projects: readonly Project[] = [
     slug: 'kablam-go',
     name: 'Kablam Go!',
     blurb:
-      'A clone of Kaboom, the Atari classic, written in Go with Ebitengine. Built to learn game dev in Go.',
+      'An Atari-inspired arcade game built with Go and Ebitengine. A hands-on exploration of game loops, timing, and catching falling bombs.',
     stack: ['Go', 'Ebitengine'],
     github: 'https://github.com/YoCodingJosh/kablam_go',
     status: 'active',
@@ -65,7 +65,7 @@ export const projects: readonly Project[] = [
     slug: 'yozora',
     name: 'Yozora',
     blurb:
-      'Developer utility for one-off stuff: UUIDs, base64, and more. Go with Wails, React + Tailwind frontend.',
+      'A desktop toolkit for the little jobs: generating UUIDs, encoding Base64, and other everyday developer tasks. Built with Go, Wails, and React.',
     stack: ['Go', 'Wails', 'React'],
     github: 'https://github.com/HYPEWORKS/yozora',
     status: 'shelf',

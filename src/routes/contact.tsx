@@ -9,7 +9,7 @@ import { cn } from '@/lib/cn'
 import { getContactConfig, revealEmail } from '@/lib/contact'
 import { useIsDark } from '@/lib/theme'
 
-const SUB = 'Feel free to reach out. Click the button to reveal my email.'
+const SUB = 'Have something interesting in mind? Let’s talk.'
 
 export const Route = createFileRoute('/contact')({
   head: () => ({
@@ -30,7 +30,8 @@ function ContactPage() {
         </h1>
         <p className="text-[18px] leading-relaxed text-pretty">{SUB}</p>
         <p className="text-[15px] leading-relaxed text-mute">
-          Please be respectful of my time in your email. I'll try to get back to you as soon as I can.
+          I’m open to interesting contract work, thoughtful collaborations, and a good conversation
+          about software. Tell me a little about what you’re working on and how I can help.
         </p>
         <div className="mt-2 flex flex-wrap gap-2.5">
           {visibleSocials.map((social) => (
@@ -50,7 +51,12 @@ function ContactPage() {
         </div>
       </div>
 
-      <MailWindow siteKey={siteKey} />
+      <div className="flex min-w-0 flex-col gap-6">
+        <MailWindow siteKey={siteKey} />
+        <p className="text-center text-sm text-mute">
+          A quick human check keeps my inbox a little quieter.
+        </p>
+      </div>
     </div>
   )
 }
@@ -103,10 +109,18 @@ interface RevealFormProps {
 function RevealForm({ siteKey, pending, error, onSubmit }: RevealFormProps) {
   const [token, setToken] = useState<string | null>(null)
   const [mounted, setMounted] = useState(false)
+  const [compact, setCompact] = useState(false)
   const isDark = useIsDark()
 
   // Turnstile is client-only; mount it after hydration so it also picks up the right theme.
-  useEffect(() => setMounted(true), [])
+  useEffect(() => {
+    const media = window.matchMedia('(max-width: 479px)')
+    const syncSize = () => setCompact(media.matches)
+    syncSize()
+    setMounted(true)
+    media.addEventListener('change', syncSize)
+    return () => media.removeEventListener('change', syncSize)
+  }, [])
 
   return (
     <form
@@ -119,7 +133,8 @@ function RevealForm({ siteKey, pending, error, onSubmit }: RevealFormProps) {
       <div
         className="flex min-h-[100px] items-center justify-center rounded-lg border-2 border-dashed border-line p-3 text-center font-mono text-[12px] text-mute"
         style={{
-          background: 'repeating-linear-gradient(135deg, transparent 0 10px, var(--color-paper) 10px 20px)',
+          background:
+            'repeating-linear-gradient(135deg, transparent 0 10px, var(--color-paper) 10px 20px)',
         }}
       >
         {mounted ? (
@@ -128,7 +143,7 @@ function RevealForm({ siteKey, pending, error, onSubmit }: RevealFormProps) {
             onSuccess={setToken}
             onExpire={() => setToken(null)}
             onError={() => setToken(null)}
-            options={{ theme: isDark ? 'dark' : 'light', size: 'flexible' }}
+            options={{ theme: isDark ? 'dark' : 'light', size: compact ? 'compact' : 'flexible' }}
           />
         ) : (
           <span>[ loading human check… ]</span>
@@ -164,12 +179,12 @@ function RevealedEmail({ email }: { email: string }) {
         type="button"
         onClick={copy}
         title="Copy to clipboard"
-        className="cursor-pointer rounded-lg border-2 border-ink bg-c3 px-4 py-2.5 font-mono text-[18px] font-semibold text-on-accent select-none sm:text-[22px]"
+        className="max-w-full cursor-pointer rounded-lg border-2 border-ink bg-c3 px-4 py-2.5 [overflow-wrap:anywhere] font-mono text-[18px] font-semibold text-on-accent select-none sm:text-[22px]"
       >
         {email}
       </button>
       <div className="text-[14px] text-mute" aria-live="polite">
-        {copied ? 'Copied? Cool. Talk soon.' : 'Click it to copy. Talk soon.'}
+        {copied ? 'Email copied. Talk soon!' : 'Click the address to copy it.'}
       </div>
     </div>
   )

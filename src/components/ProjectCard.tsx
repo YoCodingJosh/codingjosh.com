@@ -1,47 +1,36 @@
-import type { Project, ProjectArt } from '@/data/projects'
-import { accentVar } from '@/lib/accent'
+import type { Project } from '@/data/projects'
+import { ProjectIllustration } from './ProjectArt'
 import { cn } from '@/lib/cn'
 import { TagLink } from './Chip'
 
-function artBackground({ kind, a, b }: ProjectArt): string {
-  const fg = accentVar(a)
-  const bg = accentVar(b)
-  switch (kind) {
-    case 'dots':
-      return `radial-gradient(${fg} 2.5px, transparent 3px) 0 0 / 16px 16px, ${bg}`
-    case 'zig':
-      return `repeating-linear-gradient(135deg, ${fg} 0 10px, ${bg} 10px 20px)`
-    case 'bars':
-      return `repeating-linear-gradient(90deg, ${fg} 0 14px, ${bg} 14px 28px)`
-  }
-}
-
 interface ActiveProjectCardProps {
   project: Project
-  /** Home page variant: taller art, smaller title, no link tag. */
+  /** Home page variant with slightly smaller titles and tighter spacing. */
   compact?: boolean
 }
 
 export function ActiveProjectCard({ project, compact = false }: ActiveProjectCardProps) {
   return (
     <article
+      id={project.slug}
       className={cn(
         'flex flex-col overflow-hidden rounded-[14px] border-2 border-ink bg-card shadow-hard-5 transition-all duration-150 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:shadow-hard-8',
         project.tilt < 0 ? 'motion-safe:hover:-rotate-1' : 'motion-safe:hover:rotate-1',
       )}
     >
-      <div
-        className={cn('border-b-2 border-ink', compact ? 'h-[120px]' : 'h-[110px]')}
-        style={project.art ? { background: artBackground(project.art) } : undefined}
-      />
-      <div className={cn('flex flex-1 flex-col p-[18px]', compact ? 'gap-2' : 'gap-2.5')}>
+      <div className={`project-art project-art-${project.slug}`}>
+        <ProjectIllustration slug={project.slug} />
+      </div>
+      <div className={cn('flex flex-1 flex-col p-[22px]', compact ? 'gap-2' : 'gap-2.5')}>
         <h3 className={cn('font-display font-bold', compact ? 'text-[19px]' : 'text-[20px]')}>
           {project.name}
         </h3>
         <p className="text-[14px] leading-[1.55] text-pretty text-mute">{project.blurb}</p>
         <div className="mt-auto flex items-center justify-between gap-2.5 pt-2">
-          <span className="font-mono text-[11px] text-mute">{project.stack.join(' · ')}</span>
-          {!compact && project.github && (
+          <span className="font-mono text-[10px] leading-relaxed text-mute">
+            {project.stack.join(' · ')}
+          </span>
+          {project.github && (
             <TagLink href={project.github} accent="c3">
               GitHub ↗
             </TagLink>

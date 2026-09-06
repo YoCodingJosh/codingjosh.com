@@ -9,9 +9,9 @@ export function Footer() {
   return (
     <footer className="relative z-[1] border-t-[3px] border-ink bg-card">
       <div className="h-[10px] border-b-[3px] border-ink" style={{ background: STRIPES }} />
-      <div className="mx-auto flex max-w-[1040px] flex-wrap items-center justify-between gap-5 p-7">
+      <div className="mx-auto flex max-w-[1160px] flex-wrap items-center justify-between gap-5 px-6 py-8 sm:px-10">
         <div className="font-mono text-[13px] text-mute">
-          © {new Date().getFullYear()} {site.name} · built with ❤️ ·{' '}
+          © {new Date().getFullYear()} {site.name} · made in Kansas City ·{' '}
           <span className="animate-blink">▮</span>
         </div>
         <div className="flex flex-wrap gap-4 font-mono text-[13px]">

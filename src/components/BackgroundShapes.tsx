@@ -9,7 +9,7 @@ function drift(duration: string, reverse = false): DriftStyle {
 /** Six floating memphis shapes behind the page. Purely decorative. */
 export function BackgroundShapes() {
   return (
-    <div aria-hidden className="pointer-events-none absolute inset-0 opacity-55">
+    <div aria-hidden className="pointer-events-none absolute inset-0 hidden opacity-30 xl:block">
       <div className="drift absolute top-[120px] left-[6%] size-[54px] rounded-full bg-c3" style={drift('11s')} />
       <div
         className="drift absolute top-[78px] right-[9%] size-[70px] bg-c2 [clip-path:polygon(50%_0,100%_100%,0_100%)]"

@@ -38,8 +38,8 @@ function UsesPage() {
                   key={item.name}
                   className="flex justify-between gap-3 border-b-2 border-dashed border-line py-2.5 text-[15px]"
                 >
-                  <dt className="font-medium">{item.name}</dt>
-                  <dd className="text-right text-[14px] text-mute">{item.note}</dd>
+                  <dt className="shrink-0 font-medium">{item.name}</dt>
+                  <dd className="max-w-[72%] text-right text-[14px] text-pretty text-mute">{item.note}</dd>
                 </div>
               ))}
             </dl>
