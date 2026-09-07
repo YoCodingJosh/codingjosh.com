@@ -43,12 +43,11 @@ const API = 'https://api.myanimelist.net/v2'
 const FIELDS = 'list_status,num_episodes,mean,main_picture,alternative_titles'
 
 /** Public list endpoint: needs only the client ID header, not OAuth, as long as the list is public. */
-async function fetchList(status?: WatchStatus): Promise<MalListEntry[]> {
+async function fetchList(): Promise<MalListEntry[]> {
   const url = new URL(`${API}/users/${encodeURIComponent(site.mal.username)}/animelist`)
   url.searchParams.set('fields', FIELDS)
   url.searchParams.set('sort', 'list_updated_at')
   url.searchParams.set('limit', '1')
-  if (status) url.searchParams.set('status', status)
 
   const response = await fetch(url, {
     headers: { 'X-MAL-CLIENT-ID': env.MAL_CLIENT_ID },
@@ -79,10 +78,9 @@ function toNowWatching(entry: MalListEntry): NowWatching {
   }
 }
 
-/** Something currently being watched, else the most recently touched entry of any status. */
+/** Latest list activity, including a completion even when other titles are still being watched. */
 async function fetchNowWatching(): Promise<NowWatching | null> {
-  const [watching] = await fetchList('watching')
-  const entry = watching ?? (await fetchList())[0]
+  const [entry] = await fetchList()
   return entry ? toNowWatching(entry) : null
 }
 

@@ -16,8 +16,10 @@ swap for a real source later.
 ## Live data
 
 - **Now watching** (`src/server/mal.ts`): pulls the most recently updated entry on the MyAnimeList
-  list configured in `src/data/site.ts` and caches it in KV for 10 minutes (stale data is served if
-  MAL is down). Needs the `MAL_CLIENT_ID` secret from <https://myanimelist.net/apiconfig>.
+  list configured in `src/data/site.ts`, regardless of status, so completing a title shows
+  **JUST FINISHED** even if other titles are still in progress. Caches it in KV for 10 minutes
+  (stale data is served if MAL is down). Needs the `MAL_CLIENT_ID` secret from
+  <https://myanimelist.net/apiconfig>.
 - **Contact email reveal** (`src/server/contact.ts`): verifies a Cloudflare Turnstile token, then reads
   the `contactStatus` key from KV. Needs the `TURNSTILE_SECRET_KEY` secret. The site key is a plain
   var in `wrangler.jsonc`.
