@@ -48,6 +48,7 @@ async function fetchList(): Promise<MalListEntry[]> {
   url.searchParams.set('fields', FIELDS)
   url.searchParams.set('sort', 'list_updated_at')
   url.searchParams.set('limit', '1')
+  url.searchParams.set('nsfw', 'true')
 
   const response = await fetch(url, {
     headers: { 'X-MAL-CLIENT-ID': env.MAL_CLIENT_ID },
